@@ -1,4 +1,9 @@
 node_modules/*
 node_modules/
 .sass-cache
-dist/
+dist/*.html
+dist/js/*
+dist/images/*
+dist/css/*
+dist/video/*
+
