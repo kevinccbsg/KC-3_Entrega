@@ -1,0 +1,26 @@
+{
+  "name": "entrega-modulo-3",
+  "version": "1.0.0",
+  "description": "Entrega del modulo 3 del Web Development Máster de KeepCoding",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevinccbsg/KC-3_Entrega.git"
+  },
+  "keywords": [
+    "Blog",
+    "Front",
+    "End",
+    "Share",
+    "experiences"
+  ],
+  "author": "Kevin Julián Martínez Escobar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevinccbsg/KC-3_Entrega/issues"
+  },
+  "homepage": "https://github.com/kevinccbsg/KC-3_Entrega#readme"
+}
