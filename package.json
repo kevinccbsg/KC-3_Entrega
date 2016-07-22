@@ -1,7 +1,7 @@
 {
-  "name": "entrega-modulo-3",
+  "name": "project-module-3",
   "version": "1.0.0",
-  "description": "Entrega del modulo 3 del Web Development Máster de KeepCoding",
+  "description": "Module 3 del Web Development Máster de KeepCoding. Platform to share your experiences.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
