@@ -12,12 +12,17 @@ const gulp 		 	= require('gulp'),
 	  autoprefixer  = require('autoprefixer'),
 	  cssnano 	 	= require('cssnano'),
 	  imagemin 	 	= require('gulp-imagemin'),
-	  spritesmith	= require('gulp.spritesmith');
+	  spritesmith	= require('gulp.spritesmith'),
+	  merge 		= require('merge-stream'),
+	  gutil 		= require('gulp-util'),
+	  source 		= require('vinyl-source-stream');
+
 
 let developPath = './src/*.html';
 let includePath = './src/includes/*.html';
+let fontPath = './src/fonts/**/*.{ttf,woff,woff2,eof,svg}'
 let sassPath = './src/scss/*.scss';
-let jsPath = './src/js/*.js';
+let jsPath = './src/js/app.js';
 let uploadsImg = ['./dist/uploads/*.png','./dist/uploads/*.jpg','./dist/uploads/*.jpeg','./dist/uploads/*.svg','./dist/uploads/*.gif'];
 let assetsImg = ['./src/images/*.png','./src/images/*.jpg','./src/images/*.jpeg','./src/images/*.svg','./src/images/*.gif'];
 let spritePath = './src/images/icons/*.png';
@@ -30,8 +35,11 @@ gulp.task('include-files', function() {
 	}))
 	.pipe(gulp.dest('./dist/'));
 });
-
-gulp('compile-sass', function() {
+gulp.task('copying-fonts', function() {
+	return gulp.src(fontPath)
+	.pipe(gulp.dest('./dist/fonts/'));
+});
+gulp.task('compile-sass', function() {
 	return gulp.src(sassPath)
 	.pipe(sourcemaps.init())
 	.pipe(sass().on('error', sass.logError))
@@ -41,14 +49,30 @@ gulp('compile-sass', function() {
 	.pipe(browserSync.stream());
 });
 gulp.task('browserify-js-files', function() {
+	// set up the browserify instance on a task basis
+	var b = browserify({
+		entries: './src/js/app.js',
+		debug: true
+	});
+
+	return b.bundle()
+	.pipe(source('./app.js'))
+	.pipe(buffer())
+		// Add transformation tasks to the pipeline here.
+		//.pipe(uglify())
+		.on('error', gutil.log)
+	.pipe(gulp.dest('./dist/js/'))
+	.pipe(browserSync.stream());
+
+});
+gulp.task('browserify-js-static-files', function() {
 	return gulp.src(jsPath)
 	.pipe(tap(function (file) {
 		file.contents = browserify(file.path, {debug: true}).bundle();
 	}))
 	.pipe(buffer())
-	.pipe(sourcemaps.init({loadMaps: true}))
-	.pipe(gulp.dest('./dist/js/'))
-	.pipe(browserSync.stream());
+	.pipe(uglify())
+	.pipe(gulp.dest('dist/js/'))
 });
 gulp.task('minified-uploaded-images', function () {
 	return gulp.src(uploadsImg)
@@ -78,6 +102,7 @@ gulp.task('sprite-generator', function () {
 
 gulp.task('develop', [
 	'include-files',
+	'copying-fonts',
 	'compile-sass',
 	'browserify-js-files',
 	'sprite-generator',
@@ -90,16 +115,16 @@ gulp.task('develop', [
 		// Define the watchers
 		gulp.watch(includePath, ['include-files']);
 		gulp.watch(sassPath, ['compile-sass']);
-		gulp.watch(jsPath, ['browserify-js-files']);
+		gulp.watch('./src/js/*.js', ['browserify-js-files']);
 		gulp.watch(assetsImg, ['minified-assets-images']);
 		gulp.watch(spritePath, ['sprite-generator', 'compile-sass']);
-		gulp.watch(developPath).on('change', browserSync.reload);
+		gulp.watch(developPath, ['include-files']).on('change', browserSync.reload);
 	});
 
 gulp.task('production-statics', [
 	'include-files',
 	'compile-sass',
-	'browserify-js-files',
+	'browserify-js-static-files',
 	'sprite-generator',
 	'minified-assets-images',
 	'minified-uploaded-images'], function () {
