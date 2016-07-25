@@ -24,7 +24,7 @@ let fontPath = './src/fonts/**/*.{ttf,woff,woff2,eof,svg}'
 let sassPath = './src/scss/*.scss';
 let jsPath = './src/js/app.js';
 let uploadsImg = ['./dist/uploads/*.png','./dist/uploads/*.jpg','./dist/uploads/*.jpeg','./dist/uploads/*.svg','./dist/uploads/*.gif'];
-let assetsImg = ['./src/images/*.png','./src/images/*.jpg','./src/images/*.jpeg','./src/images/*.svg','./src/images/*.gif'];
+let assetsImg = './src/images/*.{png,jpg,jpeg,gif,svg,JPEG}';
 let spritePath = './src/images/icons/**/*.png';
 
 gulp.task('include-files', function() {
@@ -82,7 +82,9 @@ gulp.task('minified-uploaded-images', function () {
 });
 gulp.task('minified-assets-images', function() {
 	return gulp.src(assetsImg)
-	.pipe(imagemin())
+	.pipe(imagemin({
+		progressive: true
+	}))
 	.pipe(gulp.dest('./dist/images/'))
 })
 gulp.task('sprite-generator', function () {
