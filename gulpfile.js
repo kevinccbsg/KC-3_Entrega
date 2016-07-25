@@ -25,7 +25,7 @@ let sassPath = './src/scss/*.scss';
 let jsPath = './src/js/app.js';
 let uploadsImg = ['./dist/uploads/*.png','./dist/uploads/*.jpg','./dist/uploads/*.jpeg','./dist/uploads/*.svg','./dist/uploads/*.gif'];
 let assetsImg = ['./src/images/*.png','./src/images/*.jpg','./src/images/*.jpeg','./src/images/*.svg','./src/images/*.gif'];
-let spritePath = './src/images/icons/*.png';
+let spritePath = './src/images/icons/**/*.png';
 
 gulp.task('include-files', function() {
 	return gulp.src(developPath)
@@ -33,7 +33,8 @@ gulp.task('include-files', function() {
 		prefix: '@@',
 		basepath: '@file'
 	}))
-	.pipe(gulp.dest('./dist/'));
+	.pipe(gulp.dest('./dist/'))
+	.pipe(browserSync.stream());
 });
 gulp.task('copying-fonts', function() {
 	return gulp.src(fontPath)
@@ -95,7 +96,7 @@ gulp.task('sprite-generator', function () {
 	.pipe(gulp.dest('./dist/images/icons'));
 
 	let scssStream = spriteData.css
-	.pipe(gulp.dest('./src/scss'));
+	.pipe(gulp.dest('./src/scss/lib'));
 
 	return merge(imgStream, scssStream);
 });
