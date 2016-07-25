@@ -1,6 +1,5 @@
-global.jQuery = require('jquery');
-var $ = require('jquery');
-require('bootstrap');
+// To use bootstrap js
+//global.jQuery = require('jquery');
+//var $ = require('jquery');
+//require('bootstrap');
 
-//$('.dropdown-toggle').dropdown();
-$('#myModal').modal('show');
