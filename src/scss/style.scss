@@ -6,8 +6,10 @@
 @import 'lib/bootstrap';
 @import 'variables';
 @import 'responsiveutilities';
+@import 'navbar';
 
 body {
 	font-family: $main-font-family;
 	font-size: $font-size-base;
+	background-color: $light-primary-color;
 }
