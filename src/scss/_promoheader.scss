@@ -12,14 +12,22 @@
 	.header-title-center {
 		font-family: $content-articles-font-family;
 		color: $light-primary-color;
-		padding: 30px;
+		.header-brand-title {
+			padding: 45px 0 0 0;
+			h1 {
+				margin: 0px;
+			}
+		}
 		.promo-content {
 			font-family: $main-font-family;
-			padding: 25px;
+			padding: 10px 0;
 			font-size: $font-size-base + 0.1rem;
 			span {
 				color: $accent-color;
 			}
+		}
+		.sign-up-block {
+			padding: 15px 0;
 		}
 	}
 	.close-header {

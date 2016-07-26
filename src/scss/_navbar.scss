@@ -6,7 +6,6 @@
 	width: 100%;
 	border-bottom: 1px solid $icon-color;
 	z-index: 2;
-	max-height: 55px;
 	top:0;
 	.navbar-header {
 		width: 100%;
@@ -63,7 +62,7 @@
 		.navbar-list {
 			list-style-type: none;
 			font-size: 0;
-			width: calc(100% - 100px);
+			width: calc(100% - 120px);
 			float: right;
 			display: none;
 			overflow-y: auto;
