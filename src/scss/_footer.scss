@@ -1,0 +1,23 @@
+.footer {
+	background-color: $primary-text-color;
+	color: $light-primary-color;
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+	.content-footer {
+		width: 100%;
+		text-align: center;
+		padding: 20px 0;
+	}
+	.go-up-page {
+		position: absolute;
+		right: 20px;
+		top: 50px;
+		i {
+			border-radius: 50%;
+			background-color: $light-primary-color;
+			color: $primary-text-color;
+			opacity: 0.8;
+		}
+	}
+}
