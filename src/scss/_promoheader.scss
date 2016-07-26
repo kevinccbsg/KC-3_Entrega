@@ -1,0 +1,27 @@
+.promo-header {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/promo_header_1_mobile.jpg);
+	background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url(../images/promo_header_1_mobile.jpg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+	.header-title-center {
+		color: $light-primary-color;
+		padding: 30px;
+		.promo-content {
+			padding: 20px;
+			span {
+				color: $accent-color;
+			}
+		}
+	}
+	.close-header {
+		color: $light-primary-color;
+		position: absolute;
+		right: 5px;
+		font-size: $font-size-large;
+	}
+}
