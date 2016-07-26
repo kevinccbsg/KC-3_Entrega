@@ -8,11 +8,15 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	text-align: center;
+	margin-bottom: 10px;
 	.header-title-center {
+		font-family: $content-articles-font-family;
 		color: $light-primary-color;
 		padding: 30px;
 		.promo-content {
-			padding: 20px;
+			font-family: $main-font-family;
+			padding: 25px;
+			font-size: $font-size-base + 0.1rem;
 			span {
 				color: $accent-color;
 			}

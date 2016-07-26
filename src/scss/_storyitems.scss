@@ -1,0 +1,130 @@
+.story-section {
+	border-top: 1px solid transparentize($dark-primary-color, 0.5);
+	padding: 20px 10px;
+	&:last-child {
+		border-bottom: 1px solid transparentize($dark-primary-color, 0.5);
+	}
+	.header-story-section {
+		margin-bottom: 10px;
+	}
+	.user-header-info {
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:-ms-flexbox;
+		display:flex;
+		-webkit-box-pack:start;
+		-webkit-justify-content:start;
+		-ms-flex-pack:start;
+		justify-content:start;
+		.info-publication-story {
+			display:-webkit-box;
+			display:-webkit-flex;
+			display:-ms-flexbox;
+			display:flex;
+			-webkit-box-pack:justify;
+			-webkit-justify-content:space-between;
+			-ms-flex-pack:justify;
+			justify-content:space-between;
+			-webkit-box-align:center;
+			-webkit-align-items:center;
+			-ms-flex-align:center;
+			align-items:center;
+			width: 100%;
+			.user-story {
+				padding-left: 5px;
+				font-weight: 700;
+				color: $accent-color;
+			}
+			.posted-story {
+				font-style: italic;
+				font-weight: 300;
+				color: $secondary-text-color;
+				.date-time {
+					font-style: italic;
+					font-weight: 300;
+					font-size: $font-size-base;
+					color: $accent-color;
+				}
+			}
+		}
+		.profile-avatar {
+			width: 32px;
+			max-width: 32px;
+			height: 32px;
+			max-height: 32px;
+			-webkit-align-self: center;
+			-ms-flex-item-align: center;
+			align-self: center;
+			.avatar-img {
+				border-radius: 50%;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	.fully-story-img {
+		width: 100%;
+		max-width: 100%;
+	}
+	.story-content {
+		font-family: $content-articles-font-family;
+		.description-story {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			height: 100px;
+			font-size: $font-size-large;
+		}
+		.read-more {
+			text-align: right;
+			a {
+				color: $accent-color;
+				text-decoration: none;
+				text-decoration: underline;
+			}
+		}
+	}
+	.story-footer {
+		.action-story-list {
+			display:-webkit-box;
+			display:-webkit-flex;
+			display:-ms-flexbox;
+			display:flex;
+			-webkit-box-pack:justify;
+			-webkit-justify-content:space-between;
+			-ms-flex-pack:justify;
+			justify-content:space-between;
+			-webkit-box-align:center;
+			-webkit-align-items:center;
+			-ms-flex-align:center;
+			align-items:center;
+			margin-top: 10px;
+			.action-item {
+				a {
+					color: $secondary-text-color;
+					@include transition(color .2s linear);
+					[class*="fa"] {
+						font-size: 20px;
+					}
+					@include desktop {
+						&:hover {
+							[class*="fa"], [class*="material-icons"] {
+								color: $accent-color;
+							}
+						}
+					}
+					&:active,
+					&:focus {
+						outline: none;
+						[class*="fa"], [class*="material-icons"] {
+							color: $accent-color;	
+						}
+					}
+					.number-interaction {
+						vertical-align: top;
+					}
+				}
+			}
+		}
+	}
+}
+
