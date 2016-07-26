@@ -5,6 +5,9 @@
 	margin: 0px;
 	width: 100%;
 	border-bottom: 1px solid $icon-color;
+	z-index: 2;
+	max-height: 55px;
+	top:0;
 	.navbar-header {
 		width: 100%;
 		padding: 15px;
@@ -20,9 +23,7 @@
 			display: inline-block;
 			position: absolute;
 			right: 10px;
-			a {
-				color: $primary-text-color;
-			}
+			top: 10px;
 		}
 		.brand {
 			text-align: center;
@@ -40,7 +41,7 @@
 	}
 	.content-categories {
 		.category-label {
-			display: inline-block;
+			display: none;
 			float: left;
 			padding: 0px 0 5px 15px;
 			text-align: left;
@@ -60,7 +61,7 @@
 			font-size: 0;
 			width: calc(100% - 100px);
 			float: right;
-			display: block;
+			display: none;
 			overflow-y: auto;
 			white-space: nowrap;
 			margin: 0px;
@@ -72,7 +73,7 @@
 					text-decoration: none;
 					color: $secondary-text-color;
 					font-size: $font-size-large;
-					transition: color .2s linear;
+					@include transition(color .2s linear);
 					&:hover,
 					&:active,
 					&:focus {
@@ -83,6 +84,27 @@
 			.navbar-item.active {
 				color: $accent-color;
 			}
+		}
+	}
+	.content-categories.show-animate {
+		@include animation('fade-in-slide-right .5s forwards');
+		.category-label {
+			display: inline-block;
+			@include animation('show-category .5s forwards');
+		}
+		.navbar-list {
+			display: block;
+			@include animation('show-category-list .5s forwards');	
+		}
+	}
+	.content-categories.hide-animate {
+		@include animation('fade-out-slide-left .5s forwards');
+		.category-label {
+			@include animation('show-category-reverse .5s forwards');
+		}
+		.navbar-list {
+			display: block;
+			@include animation('show-category-list-reverse .5s forwards');
 		}
 	}
 }

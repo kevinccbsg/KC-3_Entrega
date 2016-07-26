@@ -6,10 +6,14 @@
 @import 'lib/bootstrap';
 @import 'variables';
 @import 'responsiveutilities';
+@import 'effectsmixins';
+@import 'animations';
+@import 'buttons';
 @import 'navbar';
 
 body {
 	font-family: $main-font-family;
 	font-size: $font-size-base;
 	background-color: $light-primary-color;
+	margin-top: 55px;
 }
