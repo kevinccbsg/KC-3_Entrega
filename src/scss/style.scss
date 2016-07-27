@@ -13,6 +13,7 @@
 @import 'navbar';
 @import 'promoheader';
 @import 'storyitems';
+@import 'mostrecent';
 @import 'pagination';
 @import 'footer';
 
@@ -52,5 +53,11 @@ h6 {
 	display: none;
 	@include tablet {
 		display: block;
+	}
+}
+.col-most-recent {
+	display: none;
+	@include desktop {
+		display: block !important;
 	}
 }

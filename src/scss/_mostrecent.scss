@@ -1,0 +1,74 @@
+.most-recent-title {
+	border-bottom: 1px solid transparentize($dark-primary-color, 0.5);
+}
+.most-recent {
+	padding: 15px 0 5px 0;
+	border-bottom: 1px solid transparentize($dark-primary-color, 0.5);
+	.most-recent-content {
+		@include displayflex;
+		@include align-items-center;
+		padding-bottom: 10px;
+		.most-recent-header {
+			@include displayflex;
+			@include flex-direction-column;
+			.title-story {
+				font-family: $content-articles-font-family;
+				padding-left: 5px;
+				font-weight: 700;
+				margin: 0;
+				color: $secondary-text-color;
+				@include tablet {
+					font-size: $font-size-large;
+				}
+			}
+			.user-story {
+				@extend .title-story;
+				color: $accent-color;
+				font-weight: 400;
+				font-size: $font-size-large;
+			}
+		}
+	}
+	.categories {
+		font-style: italic;
+		font-weight: 300;
+		color: $secondary-text-color;
+		text-align: right;
+		@include tablet {
+			font-size: $font-size-base;
+		}
+		i {
+			vertical-align: super;
+		}
+		.list-of-categories {
+			display: inline-block;
+			margin: 0;
+			.category-item {
+				display: inline-block;
+				float: left;
+				&:after {
+					content: ",\00a0";
+				}
+			}
+		}
+	}
+	.profile-avatar {
+		width: 32px;
+		max-width: 32px;
+		height: 32px;
+		max-height: 32px;
+		@include align-self-center;
+		display: inline-block;
+		@include tablet {
+			width: 32px;
+			max-width: 32px;
+			height: 32px;
+			max-height: 32px;
+		}
+		.avatar-img {
+			border-radius: 50%;
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+}

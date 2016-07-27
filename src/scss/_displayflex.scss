@@ -32,3 +32,10 @@
 	-ms-flex-item-align: center;
 	align-self: center;	
 }
+@mixin flex-direction-column () {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
