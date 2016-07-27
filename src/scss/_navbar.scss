@@ -8,19 +8,24 @@
 	z-index: 2;
 	top:0;
 	@include displayflex;
-	@include align-items-center;
+	@include wrap;
 	.content-navbar-header {
 		width: 100%;
+		padding: 15px;
 		@include displayflex;
 		@include justy-content-space-between;
 		@include align-items-center;
+		a {
+			color: $primary-text-color;
+		}
 		.button-category {
-			@include tablet {
+			.material-icons {
+				vertical-align: bottom;
 			}
 		}
 		.login {
 			a {
-				color: $primary-text-color;
+				color: $accent-color;
 			}
 		}
 		.brand {
@@ -88,7 +93,12 @@
 			}
 		}
 	}
-	.content-categories.show-animate {
+}
+.navbar.show-animate {
+	.content-navbar-header {
+		padding: 15px 15px 0 15px;
+	}
+	.content-categories {
 		@include animation('fade-in-slide-right .5s forwards');
 		.category-label {
 			display: inline-block;
@@ -99,14 +109,19 @@
 			@include animation('show-category-list .5s forwards');	
 		}
 	}
-	.content-categories.hide-animate {
-		@include animation('fade-out-slide-left .5s forwards');
+}
+.navbar.hide-animate {
+	.content-navbar-header {
+		padding: 15px;
+	}
+	.content-categories {
+		@include animation('fade-out-slide-left .3s forwards');
 		.category-label {
-			@include animation('show-category-reverse .5s forwards');
+			@include animation('show-category-reverse .3s forwards');
 		}
 		.navbar-list {
 			display: block;
-			@include animation('show-category-list-reverse .5s forwards');
+			@include animation('show-category-list-reverse .3s forwards');
 		}
 	}
 }
