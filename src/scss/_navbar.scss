@@ -31,7 +31,6 @@
 		}
 		.login {
 			.Sign-up {
-				display: none;
 				@include tablet {
 					display: inline-block;
 					color: $accent-color;

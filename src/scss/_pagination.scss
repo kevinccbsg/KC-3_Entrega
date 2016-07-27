@@ -5,6 +5,12 @@
 	background-color: $light-primary-color;
 	border: none;
 	color: $accent-color;
+	@include tablet {
+		font-size: 25px;
+		.material-icons {
+			font-size: 38px;
+		}
+	}
 }
 .pagination>.disabled>a, 
 .pagination>.disabled>a:focus, 

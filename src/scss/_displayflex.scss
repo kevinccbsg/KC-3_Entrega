@@ -27,3 +27,8 @@
 	-ms-flex-wrap:wrap;
 	flex-wrap:wrap;
 }
+@mixin align-self-center () {
+	-webkit-align-self: center;
+	-ms-flex-item-align: center;
+	align-self: center;	
+}

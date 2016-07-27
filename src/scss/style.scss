@@ -41,3 +41,10 @@ h5 {
 h6 {
 	font-size: $font-size-h6;
 }
+/*Common and usefull clasess*/
+.display-under-tablet {
+	display: none;
+	@include tablet {
+		display: block;
+	}
+}
