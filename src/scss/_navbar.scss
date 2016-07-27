@@ -7,32 +7,26 @@
 	border-bottom: 1px solid $icon-color;
 	z-index: 2;
 	top:0;
-	.navbar-header {
+	@include displayflex;
+	@include align-items-center;
+	.content-navbar-header {
 		width: 100%;
-		padding: 15px;
-		padding-bottom: 0px;
-		text-align: center;
-		position: relative;
+		@include displayflex;
+		@include justy-content-space-between;
+		@include align-items-center;
 		.button-category {
-			display: inline-block;
-			position: absolute;
-			left: 15px;
+			@include tablet {
+			}
 		}
 		.login {
-			display: inline-block;
-			position: absolute;
-			right: 10px;
-			top: 10px;
+			a {
+				color: $primary-text-color;
+			}
 		}
 		.brand {
 			font-family: $content-articles-font-family;
-			text-align: center;
-			display: inline-block;
 			a {
 				height: 36px;
-				max-width: 60px;
-    			width: 60px;
-    			max-height: 36px;
     			text-decoration: none;
 				color: $primary-text-color;
 				font-size: $font-size-large;
