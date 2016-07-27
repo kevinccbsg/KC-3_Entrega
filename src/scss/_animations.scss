@@ -1,0 +1,107 @@
+
+@include keyframes(fade-in-slide-right) {
+	0% {
+		opacity: 0;
+		width: 0;
+	}
+	10% {
+		opacity: 0.5;
+		width: 20%;
+	}
+	25% {
+		opacity: 1;
+		width: 50%;
+	}
+	50% {
+		width: 75%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@include keyframes(show-category) {
+	0% {
+		display: none;
+		opacity: 0;
+	}
+	10% {
+		display: inline-block;
+		opacity: 0.5;
+	}
+	25% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@include keyframes(show-category-list) {
+	0% {
+		display: none;
+	}
+	25% {
+		display: block;
+		opacity: 0;
+	}
+	50% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+@include keyframes(fade-out-slide-left) {
+	0% {
+		width: 100%;
+	}
+	10% {
+		width: 75%;
+	}
+	25% {
+		opacity: 1;
+		width: 50%;
+	}
+	50% {
+		opacity: 0.5;
+		width: 20%;
+	}
+	100% {
+		opacity: 0;
+		width: 0;
+	}
+}
+
+@include keyframes(show-category-reverse) {
+	0% {
+		opacity: 1;
+		display: inline-block;
+	}
+	75% {
+		display: none;
+		opacity: 0.5;
+	}
+	100% {
+		display: none;
+		opacity: 0;
+	}
+}
+@include keyframes(show-category-list-reverse) {
+	0% {
+		opacity: 1;
+		display: block;
+	}
+	50% {
+		opacity: 0.5;
+		display: none;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}

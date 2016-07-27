@@ -4,3 +4,53 @@
 @import 'lib/sprite';
 @import 'icons';
 @import 'lib/bootstrap';
+@import 'variables';
+@import 'responsiveutilities';
+@import 'effectsmixins';
+@import 'animations';
+@import 'displayflex';
+@import 'buttons';
+@import 'navbar';
+@import 'promoheader';
+@import 'storyitems';
+@import 'pagination';
+@import 'footer';
+
+body {
+	font-family: $main-font-family;
+	font-size: $font-size-base;
+	background-color: $light-primary-color;
+	margin-top: 55px;
+	overflow-x: hidden;
+	@include tablet {
+		margin-top: 105px;
+	}
+}
+h1 {
+	font-size: $font-size-h1;
+}
+h2 {
+	font-size: $font-size-h2;
+}
+h3 {
+	font-size: $font-size-h3;
+}
+h4 {
+	font-size: $font-size-h4;
+}
+h5 {
+	font-size: $font-size-h5;
+}
+h6 {
+	font-size: $font-size-h6;
+	@include tablet {
+		font-size: $font-size-h6 + 0.5rem;
+	}
+}
+/*Common and usefull clasess*/
+.display-under-tablet {
+	display: none;
+	@include tablet {
+		display: block;
+	}
+}

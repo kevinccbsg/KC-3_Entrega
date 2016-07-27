@@ -1,0 +1,52 @@
+.promo-header {
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/promo_header_1_mobile.jpg);
+	background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url(../images/promo_header_1_mobile.jpg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	text-align: center;
+	margin-bottom: 10px;
+	@include tablet {
+		background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/promo_header_1.jpg);
+		background-image: linear-gradient( rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65) ), url(../images/promo_header_1.jpg);
+	}
+	.header-title-center {
+		font-family: $content-articles-font-family;
+		color: $light-primary-color;
+		.header-brand-title {
+			padding: 45px 0 0 0;
+			h1 {
+				margin: 0px;
+			}
+			@include tablet {
+				padding: 100px 0 20px 0;
+			}
+		}
+		.promo-content {
+			font-family: $main-font-family;
+			padding: 10px 0;
+			font-size: $font-size-base + 0.1rem;
+			@include tablet {
+				font-size: $font-size-base + 0.5rem;
+			}
+			span {
+				color: $accent-color;
+			}
+		}
+		.sign-up-block {
+			padding: 15px 0;
+			@include tablet {
+				padding: 0 0 50px 0;
+			}
+		}
+	}
+	.close-header {
+		color: $light-primary-color;
+		position: absolute;
+		right: 5px;
+		font-size: $font-size-large;
+	}
+}
