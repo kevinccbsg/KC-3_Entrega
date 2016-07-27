@@ -9,8 +9,16 @@
 		text-align: center;
 		padding: 5px 0 10px 0;
 		font-size: $font-size-small - 0.3rem;
+		@include tablet {
+			font-size: $font-size-base;
+		}
 		.footer-brand-title {
 			font-family: $content-articles-font-family;
+			@include tablet {
+				h2 {
+					font-size: $font-size-base + 3.5rem;
+				}
+			}
 		}
 		.social-networks {
 			padding: 10px 0;
@@ -36,7 +44,7 @@
 	}
 	.go-up-page {
 		position: absolute;
-		right: 20px;
+		right: 40px;
 		top: calc(50% - 24px);
 		i {
 			font-size: $font-size-large + 1.5rem;
@@ -44,6 +52,9 @@
 			background-color: $light-primary-color;
 			color: $primary-text-color;
 			opacity: 0.8;
+			@include tablet {
+				font-size: $font-size-base + 3.5rem;
+			}
 		}
 	}
 }

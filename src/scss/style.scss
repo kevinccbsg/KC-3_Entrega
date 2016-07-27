@@ -22,6 +22,9 @@ body {
 	background-color: $light-primary-color;
 	margin-top: 55px;
 	overflow-x: hidden;
+	@include tablet {
+		margin-top: 105px;
+	}
 }
 h1 {
 	font-size: $font-size-h1;
@@ -40,6 +43,9 @@ h5 {
 }
 h6 {
 	font-size: $font-size-h6;
+	@include tablet {
+		font-size: $font-size-h6 + 0.5rem;
+	}
 }
 /*Common and usefull clasess*/
 .display-under-tablet {
