@@ -22,7 +22,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-most-recent col-md-4">
+					<div class="display-over-tablet col-md-4">
 						<div class="row">
 							<div class="col-xs-12">
 								<div class="most-recent-title">
@@ -37,22 +37,24 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
-						<div class="most-recent-title">
+						<div class="comments-title">
 							<h2>Comments</h2>
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
-						<div class="states-coments no-comments">
+						<div class="states-coments comments">
 							<div class="ui-element no-comments-container">
 								<section class="comment-card">
-									<p>No comments</p>
-									<a href="">Be the first!</a>
+									<div class="no-comments-content">
+										<p>No comments</p>
+										<a href="">Be the first!</a>
+									</div>
 								</section>
 							</div>
 							<div class="ui-element comments-container">
-								<section class="commnet-card">
+								<section class="comment-card">
 									<header>
 										<div class="comment-header">
 											<h4 class="user-comment">User name comment</h4>
@@ -67,6 +69,35 @@
 									</article>
 								</section>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-8">
+						<div class="form-container">
+							<form novalidate>
+								<div class="form-group">
+									<label for="commentMessage">Comment</label>
+									<textarea id="commentMessage" cols="30" rows="5" placeholder="Write your comment"></textarea>
+								</div>
+								<div class="responsive-container">
+									<div class="form-group">
+										<label for="inputName">Name</label>
+										<input type="text" class="form-control" id="inputName" placeholder="Name">
+									</div>
+									<div class="form-group">
+										<label for="inputLastName">Last Name</label>
+										<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+									</div>
+									<div class="form-group">
+										<label for="inputEmail">Email</label>
+										<input type="mail" class="form-control" id="inputEmail" placeholder="Email">
+									</div>
+								</div>
+								<div class="container-button">
+									<button type="submit" class="btn btn-secondary">Comment</button>
+								</div>
+							</form>
 						</div>
 					</div>
 				</div>

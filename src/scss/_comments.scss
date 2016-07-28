@@ -1,0 +1,52 @@
+.comment-card {
+	margin: 15px 0;
+	padding: 10px;
+	border: 1px solid transparentize($dark-primary-color, 0.8);
+	width: 100%;
+	.no-comments-content {
+		text-align: center;
+	}
+	.comment-header {
+		border-bottom: 1px solid transparentize($dark-primary-color, 0.8);
+		.user-comment {
+
+			font-size: $font-size-large;
+			color: $accent-color;
+		}
+		.email-comment {
+			font-size: $font-size-small;
+			font-style: italic;
+			font-weight: 300;
+		}
+	}
+	.comment-content {
+		p {
+			padding: 5px 0;
+			font-size: $font-size-small;
+			margin: 0;
+		}
+	}
+}
+.form-container {
+	margin: 30px 0;
+	#commentMessage {
+		width: 100%;
+		border-radius: 4px;
+	}
+	.form-group > input, .form-group > textarea {
+		background-color: $light-primary-color;
+	}
+	.container-button {
+		text-align: right;
+	}
+	@include desktop {
+		.responsive-container {
+			@include displayflex;
+			@include justy-content-space-between;
+			@include align-items-center;
+			.form-group > input {
+				width: 90%;
+			}
+		}
+	}
+}

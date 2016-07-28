@@ -39,17 +39,21 @@
 		}
 		.login {
 			.mobile-search-access {
+				@include tablet-desktop {
+					display: none;
+				}
 				@include desktop {
 					display: none;
 				}
 				.mobile-icons {
 					color: $accent-color;
+					display: inline-block;
 					i {
 						vertical-align: middle;
 					}
 				}
 			}
-			.display-over-tablet {
+			.display-over-tablet-desktop {
 				color: $accent-color;
 			}
 			.search-bar-form {
@@ -71,6 +75,11 @@
 				.search-button {
 					background-color: transparent;
 					border: none;
+					@include tablet-desktop {
+						i {
+							vertical-align: bottom;
+						}
+					}
 					i {
 						color: $accent-color;
 						vertical-align: text-top;

@@ -4,6 +4,12 @@
 	}
 }
 
+@mixin tablet-desktop {
+	@media (min-width: #{$tablet-desktop-width}) and (max-width: #{$desktop-width}) {
+		@content
+	}
+}
+
 @mixin desktop {
 	@media all and (min-width: #{$desktop-width}) {
 		@content;
