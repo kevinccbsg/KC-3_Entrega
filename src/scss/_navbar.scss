@@ -38,7 +38,47 @@
 			}
 		}
 		.login {
+			.mobile-search-access {
+				@include desktop {
+					display: none;
+				}
+				.mobile-icons {
+					color: $accent-color;
+					i {
+						vertical-align: middle;
+					}
+				}
+			}
+			.display-over-tablet {
+				color: $accent-color;
+			}
+			.search-bar-form {
+				display: inline-block;
+				.text-search-input {
+					outline: none;
+					padding: 0;
+					width: 0;
+					color: $secondary-text-color;
+					background-color: transparent;
+					border: none;
+					border-bottom: 1px solid $accent-color;
+					border-bottom-left-radius: 0px;
+					border-bottom-right-radius: 0px;
+					&.active {
+						@include animation('expand-input 1s forwards');
+					}
+				}
+				.search-button {
+					background-color: transparent;
+					border: none;
+					i {
+						color: $accent-color;
+						vertical-align: text-top;
+					}
+				}
+			}
 			.Sign-up {
+				cursor: pointer;
 				@include tablet {
 					display: inline-block;
 					color: $accent-color;
@@ -46,11 +86,16 @@
 				}
 				@include desktop {
 					font-size: $font-size-base;
+					@include transition('color .2s linear');
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 			}
 			a {
 				color: $accent-color;
 				font-size: $font-size-large + 0.5rem;
+				@include transition('color .2s linear');
 				@include desktop {
 					font-size: $font-size-base;
 				}
@@ -67,6 +112,38 @@
 					color: $light-primary-color;
 				}
 			}
+		}
+	}
+	.search-bar-content {
+		@extend .content-navbar-header;
+		display: block;
+		.search-bar-form {
+			position: relative;
+		}
+		.search-button {
+			background-color: transparent;
+			border: none;
+			i {
+				color: $accent-color;
+				vertical-align: text-top;
+			}
+		}
+		.close-search-bar {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.text-search-input {
+			outline: none;
+			padding: 0 5px;
+			width: 80%;
+			border-radius: 20px;
+			color: $secondary-text-color;
+			background-color: $light-primary-color;
+			border: none;
+			border-bottom: 1px solid $accent-color;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
 		}
 	}
 	.content-categories {
@@ -107,7 +184,7 @@
 		.content-list-category {
 			position: absolute;
 			@include desktop {
-				float: right;
+				float: left;
 				position: relative;
 			}
 			.navbar-list {

@@ -10,11 +10,14 @@
 @import 'animations';
 @import 'displayflex';
 @import 'buttons';
+@import 'uielements';
 @import 'navbar';
 @import 'promoheader';
 @import 'storyitems';
 @import 'mostrecent';
 @import 'pagination';
+@import 'story';
+@import 'comments';
 @import 'footer';
 
 body {
@@ -53,14 +56,14 @@ h6 {
 }
 /*Common and usefull clasess*/
 .display-under-tablet {
+	display: block;
+	@include tablet {
+		display: none;
+	}
+}
+.display-over-tablet {
 	display: none;
 	@include tablet {
 		display: block;
-	}
-}
-.col-most-recent {
-	display: none;
-	@include desktop {
-		display: block !important;
 	}
 }

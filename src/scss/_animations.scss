@@ -105,3 +105,14 @@
 		display: none;
 	}
 }
+
+@include keyframes(expand-input) {
+	0% {
+		opacity: 0;
+		width: 0%;
+	}
+	100% {
+		opacity: 1;
+		width: 75%;
+	}
+}

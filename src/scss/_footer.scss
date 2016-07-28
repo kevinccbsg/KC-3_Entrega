@@ -15,7 +15,7 @@
 		@include desktop {
 			.author {
 				display: inline-block;
-				padding-left: 15px;
+				padding-left: 5%;
 			}
 			.desktop-contact {
 				width: 100%;
@@ -41,7 +41,7 @@
 			@include desktop {
 				float: right;
 				padding: 0;
-				padding-right: 15px;
+				padding-right: 5%;
 			}
 			a {
 				color: $light-primary-color;
@@ -65,8 +65,12 @@
 	}
 	.go-up-page {
 		position: absolute;
-		right: 40px;
+		right: 15px;
 		top: calc(50% - 24px);
+		cursor: pointer;
+		@include tablet {
+			right: 40px;
+		}
 		i {
 			font-size: $font-size-large + 1.5rem;
 			border-radius: 50%;

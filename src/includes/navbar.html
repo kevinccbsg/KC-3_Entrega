@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="ui-element navbar">
 	<div class="content-navbar-header">
 		<div class="button-category">
 			<a href="#">
@@ -9,8 +9,24 @@
 			<a class="brand" href="index.html">Sharend</a>
 		</div>
 		<div class="login">
-			<a href="login.html">Login </a>
-			<span class="Sign-up display-under-tablet">/ Sign Up</span>
+			<div class="mobile-search-access">
+				<div class="mobile-icons">
+					<i class="material-icons">&#xE8B6;</i>
+				</div>
+				<div class="mobile-icons">
+					<i class="material-icons">&#xE8AC;</i>
+				</div>
+			</div>
+			<div class="display-over-tablet">
+				<a href="login.html">Login </a>/ 
+				<span class="Sign-up">Sign Up</span>
+				<form class="search-bar-form" novalidate="">
+					<input type="text" placeholder="Search in Sharend" id="navbarSearchInput" class="text-search-input" name="navSearchInput">
+					<button class="search-button" type="submit">
+						<i class="material-icons">&#xE8B6;</i>
+					</button>
+				</form>
+			</div>
 		</div>
 	</div>
 	<div class="content-categories">
