@@ -4,3 +4,72 @@
 @import 'lib/sprite';
 @import 'icons';
 @import 'lib/bootstrap';
+@import 'variables';
+@import 'responsiveutilities';
+@import 'effectsmixins';
+@import 'animations';
+@import 'displayflex';
+@import 'buttons';
+@import 'uielements';
+@import 'navbar';
+@import 'promoheader';
+@import 'storyitems';
+@import 'mostrecent';
+@import 'pagination';
+@import 'story';
+@import 'comments';
+@import 'footer';
+
+body {
+	font-family: $main-font-family;
+	font-size: $font-size-base;
+	background-color: $light-primary-color;
+	margin-top: 55px;
+	overflow-x: hidden;
+	@include tablet {
+		margin-top: 105px;
+	}
+	@include desktop {
+		margin-top: 0;
+	}
+}
+h1 {
+	font-size: $font-size-h1;
+}
+h2 {
+	font-size: $font-size-h2;
+}
+h3 {
+	font-size: $font-size-h3;
+}
+h4 {
+	font-size: $font-size-h4;
+}
+h5 {
+	font-size: $font-size-h5;
+}
+h6 {
+	font-size: $font-size-h6;
+	@include tablet {
+		font-size: $font-size-h6 + 0.5rem;
+	}
+}
+/*Common and usefull clasess*/
+.display-under-tablet {
+	display: block;
+	@include tablet {
+		display: none;
+	}
+}
+.display-over-tablet {
+	display: none;
+	@include tablet-desktop {
+		display: block;
+	}
+}
+.display-over-tablet-desktop {
+	display: none;
+	@include desktop {
+		display: block;
+	}
+}

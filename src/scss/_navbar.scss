@@ -1,0 +1,287 @@
+.navbar {
+	position: fixed;
+	background-color: $light-primary-color;
+	color: $secondary-text-color;
+	margin: 0px;
+	width: 100%;
+	border-bottom: 1px solid $icon-color;
+	z-index: 2;
+	top:0;
+	@include displayflex;
+	@include wrap;
+	@include desktop {
+		background-color: transparent;
+		border-bottom: none;
+		color: $light-primary-color;
+	}
+	.content-navbar-header {
+		width: 100%;
+		padding: 15px;
+		@include displayflex;
+		@include justy-content-space-between;
+		@include align-items-center;
+		@include tablet {
+			padding: 15px 30px 5px 30px;
+		}
+		@include desktop {
+			padding: 15px 50px 5px 50px;
+		}
+		a {
+			color: $primary-text-color;
+		}
+		.button-category {
+			.material-icons {
+				vertical-align: bottom;
+			}
+			@include tablet {
+				display: none;
+			}
+		}
+		.login {
+			.mobile-search-access {
+				@include tablet-desktop {
+					display: none;
+				}
+				@include desktop {
+					display: none;
+				}
+				.mobile-icons {
+					color: $accent-color;
+					display: inline-block;
+					i {
+						vertical-align: middle;
+					}
+				}
+			}
+			.display-over-tablet-desktop {
+				color: $accent-color;
+			}
+			.search-bar-form {
+				display: inline-block;
+				.text-search-input {
+					outline: none;
+					padding: 0;
+					width: 0;
+					color: $secondary-text-color;
+					background-color: transparent;
+					border: none;
+					border-bottom: 1px solid $accent-color;
+					border-bottom-left-radius: 0px;
+					border-bottom-right-radius: 0px;
+					&.active {
+						@include animation('expand-input 1s forwards');
+					}
+				}
+				.search-button {
+					background-color: transparent;
+					border: none;
+					@include tablet-desktop {
+						i {
+							vertical-align: bottom;
+						}
+					}
+					i {
+						color: $accent-color;
+						vertical-align: text-top;
+					}
+				}
+			}
+			.Sign-up {
+				cursor: pointer;
+				@include tablet {
+					display: inline-block;
+					color: $accent-color;
+					font-size: $font-size-large + 0.5rem;
+				}
+				@include desktop {
+					font-size: $font-size-base;
+					@include transition('color .2s linear');
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+			a {
+				color: $accent-color;
+				font-size: $font-size-large + 0.5rem;
+				@include transition('color .2s linear');
+				@include desktop {
+					font-size: $font-size-base;
+				}
+			}
+		}
+		.brand {
+			font-family: $content-articles-font-family;
+			a {
+				height: 36px;
+    			text-decoration: none;
+				color: $primary-text-color;
+				font-size: $font-size-large + 0.5rem;
+				@include desktop {
+					color: $light-primary-color;
+				}
+			}
+		}
+	}
+	.search-bar-content {
+		@extend .content-navbar-header;
+		display: block;
+		.search-bar-form {
+			position: relative;
+		}
+		.search-button {
+			background-color: transparent;
+			border: none;
+			i {
+				color: $accent-color;
+				vertical-align: text-top;
+			}
+		}
+		.close-search-bar {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.text-search-input {
+			outline: none;
+			padding: 0 5px;
+			width: 80%;
+			border-radius: 20px;
+			color: $secondary-text-color;
+			background-color: $light-primary-color;
+			border: none;
+			border-bottom: 1px solid $accent-color;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+	}
+	.content-categories {
+		width: 100%;
+		@include desktop {
+			width: auto;
+		}
+		.category-label {
+			display: none;
+			float: left;
+			padding: 0px 0 5px 15px;
+			text-align: left;
+			font-size: $font-size-large;
+			@include tablet {
+				display: block;
+				padding: 0px 0 15px 30px;
+				font-size: $font-size-large + 0.7rem;
+			}
+			@include desktop {
+				font-size: $font-size-large;
+				padding: 0px 0 15px 50px;
+			}
+			a {
+				text-decoration: none;
+				color: $primary-text-color;
+				@include desktop {
+					color: $light-primary-color;
+					&:hover {
+						color: $primary-text-color;
+					}
+				}
+				&:active,
+				&:focus {
+					color: $primary-text-color;
+				}
+			}
+		}
+		.content-list-category {
+			position: absolute;
+			@include desktop {
+				float: left;
+				position: relative;
+			}
+			.navbar-list {
+				list-style-type: none;
+				font-size: 0;
+				width: calc(100% - 120px);
+				float: right;
+				display: none;
+				overflow-y: auto;
+				white-space: nowrap;
+				margin: 0px;
+				@include tablet {
+					display: block;
+					width: calc(100% - 165px);
+				}
+				@include desktop {
+					overflow: hidden;
+					width: 100%;
+				}
+				.navbar-item {
+					display: inline-block;
+					font-size: $font-size-base;
+					padding: 0 5px 5px 5px;
+					@include tablet {
+						padding: 0 10px 15px 10px;
+						font-size: $font-size-large + 0.7rem;
+					}
+					@include desktop {
+						font-size: $font-size-large;
+					}
+					a {
+						text-decoration: none;
+						color: $secondary-text-color;
+						font-size: $font-size-large;
+						@include transition(color .2s linear);
+						@include tablet {
+							font-size: $font-size-large + 0.7rem;
+							vertical-align: middle;
+						}
+						@include desktop {
+							vertical-align: inherit;
+							font-size: $font-size-large;
+							color: $icon-color;
+							&:hover {
+								color: $accent-color;
+							}
+						}
+						&:active,
+						&:focus {
+							color: $accent-color;
+						}
+					}
+				}
+				.navbar-item.active {
+					color: $accent-color;
+				}
+			}
+		}
+	}
+}
+.navbar.show-animate {
+	.content-navbar-header {
+		padding: 15px 15px 0 15px;
+	}
+	.content-categories {
+		@include animation('fade-in-slide-right .5s forwards');
+		.category-label {
+			display: inline-block;
+			@include animation('show-category .5s forwards');
+		}
+		.navbar-list {
+			display: block;
+			@include animation('show-category-list .5s forwards');	
+		}
+	}
+}
+.navbar.hide-animate {
+	.content-navbar-header {
+		padding: 15px;
+	}
+	.content-categories {
+		@include animation('fade-out-slide-left .3s forwards');
+		.category-label {
+			@include animation('show-category-reverse .3s forwards');
+		}
+		.navbar-list {
+			display: block;
+			@include animation('show-category-list-reverse .3s forwards');
+		}
+	}
+}

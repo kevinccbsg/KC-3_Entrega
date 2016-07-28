@@ -1,6 +1,11 @@
 .icon {
   display: inline-block;
 }
+.icon.icon-avatar-default {
+	@include sprite($ic-account-circle-black-24dp);
+	height: 68px;
+	width: 68px;
+}
 .icon.icon-account-circle {
 	@include sprite($ic-account-circle);
 }

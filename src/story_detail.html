@@ -1,13 +1,109 @@
 @@include('./includes/head.html')
-	<body>
+	<body class="full-web">
 		@@include('./includes/navbar.html')
 		@@include('./includes/header.html')
-		<div class="container">
-			<div class="row">
-				Contents Every article
+		<div class="ui-element search-bar">
+			@@include('./includes/searchbar.html')
+			<div class="container">
+				<div class="row">
+					@@include('./includes/most_recent.html')
+					@@include('./includes/most_recent.html')
+					@@include('./includes/most_recent.html')
+				</div>
 			</div>
 		</div>
-		@@include('./includes/footer.html')
+		<div class="ui-element website-full-view">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-8">
+						<div class="row">
+							<div class="col-xs-12">
+								@@include('./includes/full_story.html')
+							</div>
+						</div>
+					</div>
+					<div class="display-over-tablet col-md-4">
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="most-recent-title">
+									<h2>Most recent</h2>
+								</div>
+							</div>
+							@@include('./includes/most_recent.html')
+							@@include('./includes/most_recent.html')
+							@@include('./includes/most_recent.html')
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-8">
+						<div class="comments-title">
+							<h2>Comments</h2>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-8">
+						<div class="states-coments comments">
+							<div class="ui-element no-comments-container">
+								<section class="comment-card">
+									<div class="no-comments-content">
+										<p>No comments</p>
+										<a href="">Be the first!</a>
+									</div>
+								</section>
+							</div>
+							<div class="ui-element comments-container">
+								<section class="comment-card">
+									<header>
+										<div class="comment-header">
+											<h4 class="user-comment">User name comment</h4>
+											<h6 class="email-comment">Lorem@ipsum.com</h6>
+										</div>
+									</header>
+									<article>
+										<div class="comment-content">
+											<p>Comentario Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente eligendi ratione earum expedita rerum incidunt nihil qui optio ex, ea consequuntur nulla deleniti, quasi quidem maiores voluptas vero commodi distinctio.
+											Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio delectus aperiam, fugiat sunt vero labore, nihil provident voluptas quos rerum fuga blanditiis, libero hic dicta quis dolorem! Tenetur, ea, aliquam.</p>
+										</div>
+									</article>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12 col-md-8">
+						<div class="form-container">
+							<form novalidate>
+								<div class="form-group">
+									<label for="commentMessage">Comment</label>
+									<textarea id="commentMessage" cols="30" rows="5" placeholder="Write your comment"></textarea>
+								</div>
+								<div class="responsive-container">
+									<div class="form-group">
+										<label for="inputName">Name</label>
+										<input type="text" class="form-control" id="inputName" placeholder="Name">
+									</div>
+									<div class="form-group">
+										<label for="inputLastName">Last Name</label>
+										<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+									</div>
+									<div class="form-group">
+										<label for="inputEmail">Email</label>
+										<input type="mail" class="form-control" id="inputEmail" placeholder="Email">
+									</div>
+								</div>
+								<div class="container-button">
+									<button type="submit" class="btn btn-secondary">Comment</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			@@include('./includes/footer.html')
+		</div>
 		<script src="js/app.js"></script>
 	</body>
 </html>

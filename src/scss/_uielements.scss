@@ -1,0 +1,52 @@
+body {
+	.ui-element {
+		display: none;
+	}
+	&.search-story {
+		.website-full-view, .navbar {
+			display: none;
+		}
+		.search-bar, .search-bar > .navbar {
+			display: block;
+		}
+		@include desktop {
+			.website-full-view, .navbar {
+				display: block;
+			}
+			.search-bar, .search-bar > .navbar {
+				display: none;
+			}
+		}
+	}
+	&.full-web {
+		.website-full-view, .navbar {
+			display: block;
+		}
+		.search-bar, .search-bar > .navbar {
+			display: none;
+		}
+		@include desktop {
+			.website-full-view, .navbar {
+				display: block;
+			}
+			.search-bar, .search-bar > .navbar {
+				display: none;
+			}
+		}
+	}
+	.states-coments {
+		
+		&.no-comments {
+			.no-comments-container {
+				display: block;
+			}
+		}
+		
+		&.comments {
+			.comments-container {
+				display: block;
+			}
+		}
+
+	}
+}

@@ -1,0 +1,85 @@
+.footer {
+	background-color: $primary-text-color;
+	color: $light-primary-color;
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+	.content-footer {
+		width: 100%;
+		text-align: center;
+		padding: 5px 0 10px 0;
+		font-size: $font-size-small - 0.3rem;
+		@include tablet {
+			font-size: $font-size-base;
+		}
+		@include desktop {
+			.author {
+				display: inline-block;
+				padding-left: 5%;
+			}
+			.desktop-contact {
+				width: 100%;
+				text-align: left;
+				position: relative;
+			}
+		}
+		.footer-brand-title {
+			font-family: $content-articles-font-family;
+			@include tablet {
+				h2 {
+					font-size: $font-size-base + 3.5rem;
+				}
+			}
+			@include desktop {
+				h2 {
+					font-size: $font-size-base + 1.5rem;
+				}
+			}	
+		}
+		.social-networks {
+			padding: 10px 0;
+			@include desktop {
+				float: right;
+				padding: 0;
+				padding-right: 5%;
+			}
+			a {
+				color: $light-primary-color;
+				text-decoration: none;
+				padding: 0 5px;
+				@include transition(color .2s linear);
+				@include desktop {
+					&:hover {
+						color: $accent-color;
+					}
+				}
+				&:focus,
+				&:active {
+					color: $accent-color;
+				}
+				.fa {
+					font-size: $font-size-large;
+				}
+			}
+		}
+	}
+	.go-up-page {
+		position: absolute;
+		right: 15px;
+		top: calc(50% - 24px);
+		cursor: pointer;
+		@include tablet {
+			right: 40px;
+		}
+		i {
+			font-size: $font-size-large + 1.5rem;
+			border-radius: 50%;
+			background-color: $light-primary-color;
+			color: $primary-text-color;
+			opacity: 0.8;
+			@include tablet {
+				font-size: $font-size-base + 3.5rem;
+			}
+		}
+	}
+}

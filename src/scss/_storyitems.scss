@@ -1,0 +1,154 @@
+.story-section {
+	border-top: 1px solid transparentize($dark-primary-color, 0.5);
+	padding: 20px 10px;
+	&:last-child {
+		/*border-bottom: 1px solid transparentize($dark-primary-color, 0.5);*/
+	}
+	.header-story-section {
+		margin-bottom: 10px;
+	}
+	.user-header-info {
+		@include displayflex;
+		@include justy-content-start;
+		.info-publication-story {
+			@include displayflex;
+			@include justy-content-space-between;
+			@include align-items-center;
+			width: 100%;
+			.user-story {
+				padding-left: 5px;
+				font-weight: 700;
+				color: $accent-color;
+				@include tablet {
+					font-size: $font-size-large + 0.5rem;
+				}
+				@include desktop {
+					font-size: $font-size-base;
+				}
+			}
+			.posted-story {
+				font-style: italic;
+				font-weight: 300;
+				color: $secondary-text-color;
+				.date-time {
+					font-style: italic;
+					font-weight: 300;
+					font-size: $font-size-base;
+					color: $accent-color;
+					@include desktop {
+						font-size: $font-size-base !important;
+					}
+				}
+				@include tablet {
+					font-size: $font-size-large + 0.2rem;
+					.date-time {
+						font-size: $font-size-large + 0.2rem;
+					}
+				}
+				@include desktop {
+					font-size: $font-size-base;
+				}
+			}
+		}
+		.profile-avatar {
+			width: 32px;
+			max-width: 32px;
+			height: 32px;
+			max-height: 32px;
+			@include align-self-center;
+			@include tablet {
+				width: 44px;
+				max-width: 44px;
+				height: 44px;
+				max-height: 44px;
+			}
+			.avatar-img {
+				border-radius: 50%;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	.fully-story-img {
+		overflow-y: hidden;
+		img {
+			width: 100%;
+			max-width: 100%;
+		}
+	}
+	.story-content {
+		font-family: $content-articles-font-family;
+		.description-story {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			height: 115px;
+			font-size: $font-size-large;
+			position: relative;
+			&:after {
+				position: absolute;
+				bottom: 0;
+				height: 100%;
+				width: 100%;
+				content: "";
+				background: linear-gradient(to top, rgba(245,245,245, 1) 1%, rgba(255,255,255, 0) 100% );
+				pointer-events: none;
+				left: 0;
+			}
+		}
+		.read-more {
+			text-align: right;
+			a {
+				color: $accent-color;
+				text-decoration: none;
+				text-decoration: underline;
+				@include tablet {
+					font-size: $font-size-large;
+				}
+			}
+		}
+	}
+	.story-footer {
+		.action-story-list {
+			@include displayflex;
+			@include justy-content-space-between;
+			@include align-items-center;
+			margin-top: 10px;
+			.action-item {
+				@include tablet {
+					.display-under-tablet {
+						display: inline-block;
+						vertical-align: super;
+					}
+				}
+				a {
+					color: $secondary-text-color;
+					@include transition(color .2s linear);
+					[class*="fa"] {
+						font-size: 20px;
+					}
+					@include desktop {
+						&:hover {
+							[class*="fa"], [class*="material-icons"], .display-under-tablet {
+								color: $accent-color;
+							}
+						}
+					}
+					&:active,
+					&:focus {
+						outline: none;
+						[class*="fa"], [class*="material-icons"], .display-under-tablet {
+							color: $accent-color;	
+						}
+					}
+					.number-interaction {
+						vertical-align: super;
+						&:after {
+							content: "\00a0";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

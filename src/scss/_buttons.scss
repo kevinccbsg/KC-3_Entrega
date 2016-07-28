@@ -1,0 +1,59 @@
+.btn {
+	-webkit-border-radius: 30;
+	-moz-border-radius: 30;
+	border-radius: 30px;
+	font-family: $main-font-family;
+	font-size: $font-size-base;
+	padding: 5px 10px;
+	text-decoration: none;
+	@include tablet {
+		padding: 10px 20px;
+		font-size: $font-size-large;
+	}
+}
+.btn:hover {
+  text-decoration: none;
+}
+.btn.btn-secondary {
+	@extend .btn;
+	background-color: $light-primary-color;
+	border: 1px solid $accent-color;
+	color: $accent-color;
+	@include transition(all .2s linear);
+	&:hover {
+		@include desktop {
+			color: $light-primary-color;
+			background-color: $accent-color;
+		}
+	}
+	&:active {
+		color: $light-primary-color;
+		background-color: darken($accent-color, 20%);
+	}
+	&:focus {
+			color: $light-primary-color;
+			background-color: $accent-color;
+			outline: none;
+	}
+}
+.btn.btn-primary {
+	@extend .btn;
+	background-color: $accent-color;
+	color: $light-primary-color;
+	@include transition(all .2s linear);
+	&:hover {
+		@include desktop {
+			color: $accent-color;
+			background-color: $light-primary-color;
+		}
+	}
+	&:active {
+		color: $accent-color;
+		background-color: darken($light-primary-color, 20%);
+	}
+	&:focus {
+			color: $accent-color;
+			background-color: $light-primary-color;
+			outline: none;
+	}
+}
