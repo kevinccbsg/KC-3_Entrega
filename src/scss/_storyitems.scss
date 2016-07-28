@@ -22,6 +22,9 @@
 				@include tablet {
 					font-size: $font-size-large + 0.5rem;
 				}
+				@include desktop {
+					font-size: $font-size-base;
+				}
 			}
 			.posted-story {
 				font-style: italic;
@@ -32,12 +35,18 @@
 					font-weight: 300;
 					font-size: $font-size-base;
 					color: $accent-color;
+					@include desktop {
+						font-size: $font-size-base !important;
+					}
 				}
 				@include tablet {
 					font-size: $font-size-large + 0.2rem;
 					.date-time {
 						font-size: $font-size-large + 0.2rem;
 					}
+				}
+				@include desktop {
+					font-size: $font-size-base;
 				}
 			}
 		}
@@ -65,9 +74,6 @@
 		img {
 			width: 100%;
 			max-width: 100%;
-		}
-		@include tablet {
-			max-height: 220px;
 		}
 	}
 	.story-content {

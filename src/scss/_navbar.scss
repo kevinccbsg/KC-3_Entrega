@@ -9,6 +9,11 @@
 	top:0;
 	@include displayflex;
 	@include wrap;
+	@include desktop {
+		background-color: transparent;
+		border-bottom: none;
+		color: $light-primary-color;
+	}
 	.content-navbar-header {
 		width: 100%;
 		padding: 15px;
@@ -17,6 +22,9 @@
 		@include align-items-center;
 		@include tablet {
 			padding: 15px 30px 5px 30px;
+		}
+		@include desktop {
+			padding: 15px 50px 5px 50px;
 		}
 		a {
 			color: $primary-text-color;
@@ -36,10 +44,16 @@
 					color: $accent-color;
 					font-size: $font-size-large + 0.5rem;
 				}
+				@include desktop {
+					font-size: $font-size-base;
+				}
 			}
 			a {
 				color: $accent-color;
 				font-size: $font-size-large + 0.5rem;
+				@include desktop {
+					font-size: $font-size-base;
+				}
 			}
 		}
 		.brand {
@@ -49,10 +63,17 @@
     			text-decoration: none;
 				color: $primary-text-color;
 				font-size: $font-size-large + 0.5rem;
+				@include desktop {
+					color: $light-primary-color;
+				}
 			}
 		}
 	}
 	.content-categories {
+		width: 100%;
+		@include desktop {
+			width: auto;
+		}
 		.category-label {
 			display: none;
 			float: left;
@@ -64,10 +85,15 @@
 				padding: 0px 0 15px 30px;
 				font-size: $font-size-large + 0.7rem;
 			}
+			@include desktop {
+				font-size: $font-size-large;
+				padding: 0px 0 15px 50px;
+			}
 			a {
 				text-decoration: none;
 				color: $primary-text-color;
 				@include desktop {
+					color: $light-primary-color;
 					&:hover {
 						color: $primary-text-color;
 					}
@@ -78,49 +104,66 @@
 				}
 			}
 		}
-		.navbar-list {
-			list-style-type: none;
-			font-size: 0;
-			width: calc(100% - 120px);
-			float: right;
-			display: none;
-			overflow-y: auto;
-			white-space: nowrap;
-			margin: 0px;
-			@include tablet {
-				display: block;
-				width: calc(100% - 165px);
+		.content-list-category {
+			position: absolute;
+			@include desktop {
+				float: right;
+				position: relative;
 			}
-			.navbar-item {
-				display: inline-block;
-				font-size: $font-size-base;
-				padding: 0 5px 5px 5px;
+			.navbar-list {
+				list-style-type: none;
+				font-size: 0;
+				width: calc(100% - 120px);
+				float: right;
+				display: none;
+				overflow-y: auto;
+				white-space: nowrap;
+				margin: 0px;
 				@include tablet {
-					padding: 0 10px 15px 10px;
-					font-size: $font-size-large + 0.7rem;
+					display: block;
+					width: calc(100% - 165px);
 				}
-				a {
-					text-decoration: none;
-					color: $secondary-text-color;
-					font-size: $font-size-large;
-					@include transition(color .2s linear);
+				@include desktop {
+					overflow: hidden;
+					width: 100%;
+				}
+				.navbar-item {
+					display: inline-block;
+					font-size: $font-size-base;
+					padding: 0 5px 5px 5px;
 					@include tablet {
+						padding: 0 10px 15px 10px;
 						font-size: $font-size-large + 0.7rem;
-						vertical-align: middle;
 					}
 					@include desktop {
-						&:hover {
+						font-size: $font-size-large;
+					}
+					a {
+						text-decoration: none;
+						color: $secondary-text-color;
+						font-size: $font-size-large;
+						@include transition(color .2s linear);
+						@include tablet {
+							font-size: $font-size-large + 0.7rem;
+							vertical-align: middle;
+						}
+						@include desktop {
+							vertical-align: inherit;
+							font-size: $font-size-large;
+							color: $icon-color;
+							&:hover {
+								color: $accent-color;
+							}
+						}
+						&:active,
+						&:focus {
 							color: $accent-color;
 						}
 					}
-					&:active,
-					&:focus {
-						color: $accent-color;
-					}
 				}
-			}
-			.navbar-item.active {
-				color: $accent-color;
+				.navbar-item.active {
+					color: $accent-color;
+				}
 			}
 		}
 	}

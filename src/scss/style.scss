@@ -26,6 +26,9 @@ body {
 	@include tablet {
 		margin-top: 105px;
 	}
+	@include desktop {
+		margin-top: 0;
+	}
 }
 h1 {
 	font-size: $font-size-h1;

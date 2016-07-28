@@ -12,6 +12,17 @@
 		@include tablet {
 			font-size: $font-size-base;
 		}
+		@include desktop {
+			.author {
+				display: inline-block;
+				padding-left: 15px;
+			}
+			.desktop-contact {
+				width: 100%;
+				text-align: left;
+				position: relative;
+			}
+		}
 		.footer-brand-title {
 			font-family: $content-articles-font-family;
 			@include tablet {
@@ -19,9 +30,19 @@
 					font-size: $font-size-base + 3.5rem;
 				}
 			}
+			@include desktop {
+				h2 {
+					font-size: $font-size-base + 1.5rem;
+				}
+			}	
 		}
 		.social-networks {
 			padding: 10px 0;
+			@include desktop {
+				float: right;
+				padding: 0;
+				padding-right: 15px;
+			}
 			a {
 				color: $light-primary-color;
 				text-decoration: none;

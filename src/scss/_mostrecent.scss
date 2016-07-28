@@ -1,5 +1,8 @@
 .most-recent-title {
 	border-bottom: 1px solid transparentize($dark-primary-color, 0.5);
+	h2 {
+		margin-top: 0px;
+	}
 }
 .most-recent {
 	padding: 15px 0 5px 0;
@@ -14,9 +17,8 @@
 			.title-story {
 				font-family: $content-articles-font-family;
 				padding-left: 5px;
-				font-weight: 700;
 				margin: 0;
-				color: $secondary-text-color;
+				color: $primary-text-color;
 				@include tablet {
 					font-size: $font-size-large;
 				}
@@ -37,6 +39,11 @@
 		@include tablet {
 			font-size: $font-size-base;
 		}
+		@include desktop {
+			i {
+				vertical-align: top;
+			}
+		}
 		i {
 			vertical-align: super;
 		}
@@ -46,6 +53,9 @@
 			.category-item {
 				display: inline-block;
 				float: left;
+				@include desktop {
+					font-size: $font-size-small;
+				}
 				&:after {
 					content: ",\00a0";
 				}
