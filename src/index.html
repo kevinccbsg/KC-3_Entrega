@@ -17,9 +17,27 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
 						<div class="row">
-							@@include('./includes/resume_story.html')
-							@@include('./includes/resume_story.html')
-							@@include('./includes/resume_story.html')
+							@@include('./includes/resume_story.html', {
+								"numberstory": "1",
+								"imgavatar" : "avatar_default.png",
+								"username":"kevinccbsg",
+								"imagestory":"story_7",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"numberstory": "2",
+								"imgavatar" : "avatar_default.png",
+								"username":"mister_stories",
+								"imagestory":"story_7",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"numberstory": "3",
+								"imgavatar" : "avatar_default.png",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7",
+								"titlestory":"Node js 6 and his new features"
+							})
 						</div>
 					</div>
 					<div class="col-md-4 display-over-tablet">
