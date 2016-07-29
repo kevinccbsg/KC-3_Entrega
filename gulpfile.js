@@ -21,6 +21,7 @@ const gulp 		 	= require('gulp'),
 let developPath = './src/*.html';
 let includePath = './src/includes/*.html';
 let fontPath = './src/fonts/**/*.{ttf,woff,woff2,eof,svg}'
+let videoPath = './src/videos/**/*.mp4';
 let sassPath = './src/scss/*.scss';
 let jsPath = './src/js/app.js';
 let uploadsImg = ['./dist/uploads/*.png','./dist/uploads/*.jpg','./dist/uploads/*.jpeg','./dist/uploads/*.svg','./dist/uploads/*.gif'];
@@ -39,6 +40,10 @@ gulp.task('include-files', function() {
 gulp.task('copying-fonts', function() {
 	return gulp.src(fontPath)
 	.pipe(gulp.dest('./dist/fonts/'));
+});
+gulp.task('copying-videos', function() {
+	return gulp.src(videoPath)
+	.pipe(gulp.dest('./dist/videos/'));
 });
 gulp.task('compile-sass', function() {
 	return gulp.src(sassPath)
@@ -106,6 +111,7 @@ gulp.task('sprite-generator', function () {
 gulp.task('develop', [
 	'include-files',
 	'copying-fonts',
+	'copying-videos',
 	'compile-sass',
 	'browserify-js-files',
 	'sprite-generator',
@@ -126,6 +132,8 @@ gulp.task('develop', [
 
 gulp.task('production-statics', [
 	'include-files',
+	'copying-fonts',
+	'copying-videos',
 	'compile-sass',
 	'browserify-js-static-files',
 	'sprite-generator',
