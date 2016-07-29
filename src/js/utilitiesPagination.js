@@ -17,13 +17,13 @@ module.exports.removeActive = function (selector) {
 		selector[i].className = '';
 	}
 }
-module.exports.setPaginate = function (numberPage, numberItems, copyContentItems, arrayItemsPerPage) {
+module.exports.setPaginate = function (numberPage, step, numberItems, copyContentItems, arrayItemsPerPage) {
 
 	for (var i = 0; i < numberItems; i++) {
-		copyContentItems[i].style.backgroundColor = 'transparent';
+		copyContentItems[i].className = 'story-section';
 	}
 	for (let i = 0; i < step; i++) {
-		(arrayItemsPerPage[numberPage-1][i][0] != undefined) ? arrayItemsPerPage[numberPage-1][i][0].style.backgroundColor = 'red' : console.log('none');
+		(arrayItemsPerPage[numberPage-1][i][0] != undefined) ? arrayItemsPerPage[numberPage-1][i][0].className = 'story-section show' : console.log('none');
 	}
 	return;
 }

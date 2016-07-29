@@ -7,6 +7,7 @@ let linkPagination = $('.pagination > li a');
 let pages = 4;
 let step = numberItems / pages;
 let itemsPerpage = Math.round(step);
+let targetToGo = $('#promoHeader');
 
 let arrayItemsPerPage = utilitiesPagination.createArrayToPaginate(pages, itemsPerpage, contentItems);
 let copyContentItems = $('.story-section');
@@ -16,6 +17,8 @@ linkPagination.on('click', function (ev) {
 	utilitiesPagination.removeActive($('.pagination > li'));
 	$(this).parent().addClass('active');
 	let numberPage = parseInt($(this).text());
-	utilitiesPagination.setPaginate(numberPage, numberItems, copyContentItems, arrayItemsPerPage);
-	
+	utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
+	$('html, body').animate({
+		scrollTop: targetToGo[0].offsetHeight - 60
+	});
 });
