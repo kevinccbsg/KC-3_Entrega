@@ -66,6 +66,9 @@ h6 {
 	@include tablet-desktop {
 		display: block;
 	}
+	@include desktop {
+		display: block;
+	}
 }
 .display-over-tablet-desktop {
 	display: none;

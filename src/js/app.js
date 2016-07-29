@@ -3,3 +3,4 @@
 //var $ = require('jquery');
 //require('bootstrap');
 require('./uiFunctionalities');
+require('./navbarBehavior');

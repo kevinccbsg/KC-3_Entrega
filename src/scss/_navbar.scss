@@ -13,6 +13,21 @@
 		background-color: transparent;
 		border-bottom: none;
 		color: $light-primary-color;
+		&.over-header {
+			background-color: $light-primary-color;
+			color: $secondary-text-color;
+			border-bottom: 1px solid $icon-color;
+			.brand {
+				a {
+					color: $secondary-text-color !important;
+				}
+			}
+			.content-categories {
+				a {
+					color: $secondary-text-color !important;
+				}
+			}
+		}
 	}
 	.content-navbar-header {
 		width: 100%;
