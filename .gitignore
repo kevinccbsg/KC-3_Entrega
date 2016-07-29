@@ -5,5 +5,5 @@ dist/*.html
 dist/js/*
 dist/images/*
 dist/css/*
-dist/video/*
+dist/videos/*
 dist/fonts/*
