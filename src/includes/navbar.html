@@ -1,6 +1,6 @@
-<nav class="ui-element navbar">
+<nav class="ui-element navbar hide-animate">
 	<div class="content-navbar-header">
-		<div class="button-category">
+		<div id="togle-categories" class="button-category">
 			<a href="#">
 				<i class="material-icons">&#xE5D3;</i>
 			</a>
@@ -10,19 +10,19 @@
 		</div>
 		<div class="login">
 			<div class="mobile-search-access">
-				<div class="mobile-icons">
+				<a id="searchButton" class="mobile-icons">
 					<i class="material-icons">&#xE8B6;</i>
-				</div>
-				<div class="mobile-icons">
+				</a>
+				<a id="login" class="mobile-icons">
 					<i class="material-icons">&#xE8AC;</i>
-				</div>
+				</a>
 			</div>
 			<div class="display-over-tablet-desktop">
-				<a href="login.html">Login </a>/ 
-				<span class="Sign-up">Sign Up</span>
+				<a href="#" class="login-button">Login </a>/ 
+				<a href="#" class="Sign-up">Sign Up</a>
 				<form class="search-bar-form" novalidate="">
 					<input type="text" placeholder="Search in Sharend" id="navbarSearchInput" class="text-search-input" name="navSearchInput">
-					<button class="search-button" type="submit">
+					<button id="searchButtonDesktop" class="search-button" type="submit">
 						<i class="material-icons">&#xE8B6;</i>
 					</button>
 				</form>

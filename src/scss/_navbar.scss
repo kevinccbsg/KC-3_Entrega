@@ -69,12 +69,13 @@
 					border-bottom-left-radius: 0px;
 					border-bottom-right-radius: 0px;
 					&.active {
-						@include animation('expand-input 1s forwards');
+						@include animation('expand-input .5s forwards');
 					}
 				}
 				.search-button {
 					background-color: transparent;
 					border: none;
+					outline: none;
 					@include tablet-desktop {
 						i {
 							vertical-align: bottom;
@@ -82,12 +83,14 @@
 					}
 					i {
 						color: $accent-color;
-						vertical-align: text-top;
+						vertical-align: bottom;
 					}
 				}
 			}
-			.Sign-up {
+			.Sign-up, .login-button {
 				cursor: pointer;
+				text-decoration: none;
+				vertical-align: bottom;
 				@include tablet {
 					display: inline-block;
 					color: $accent-color;
@@ -99,14 +102,6 @@
 					&:hover {
 						text-decoration: underline;
 					}
-				}
-			}
-			a {
-				color: $accent-color;
-				font-size: $font-size-large + 0.5rem;
-				@include transition('color .2s linear');
-				@include desktop {
-					font-size: $font-size-base;
 				}
 			}
 		}
@@ -271,17 +266,19 @@
 	}
 }
 .navbar.hide-animate {
+	@include phone {
+		.content-categories {
+			@include animation('fade-out-slide-left .3s forwards');
+			.category-label {
+				@include animation('show-category-reverse .3s forwards');
+			}
+			.navbar-list {
+				display: block;
+				@include animation('show-category-list-reverse .3s forwards');
+			}
+		}
+	}
 	.content-navbar-header {
 		padding: 15px;
-	}
-	.content-categories {
-		@include animation('fade-out-slide-left .3s forwards');
-		.category-label {
-			@include animation('show-category-reverse .3s forwards');
-		}
-		.navbar-list {
-			display: block;
-			@include animation('show-category-list-reverse .3s forwards');
-		}
 	}
 }

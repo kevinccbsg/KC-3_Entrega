@@ -2,4 +2,4 @@
 //global.jQuery = require('jquery');
 //var $ = require('jquery');
 //require('bootstrap');
-
+require('./uiFunctionalities');
