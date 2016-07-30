@@ -144,16 +144,20 @@
 					}
 					@include desktop {
 						&:hover {
-							[class*="fa"], [class*="material-icons"], .display-under-tablet {
+							text-decoration: none;
+							[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction {
 								color: $accent-color;
+								text-decoration: none;
 							}
 						}
 					}
 					&:active,
 					&:focus {
 						outline: none;
-						[class*="fa"], [class*="material-icons"], .display-under-tablet {
-							color: $accent-color;	
+						text-decoration: none;
+						[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction {
+							color: $accent-color;
+							text-decoration: none;
 						}
 					}
 					.number-interaction {
