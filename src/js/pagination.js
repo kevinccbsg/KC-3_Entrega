@@ -16,12 +16,14 @@ let copyContentItems = $('.story-section');
 
 utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
 
+
 linkPagination.on('click', function (ev) {
 	ev.preventDefault();
 	utilitiesPagination.removeActive($('.pagination > li'));
 	$(this).parent().addClass('active');
-	numberPage = parseInt($(this).text());
-	if (!isNaN(numberPage)) {
+	let valueClickPage = parseInt($(this).text());
+	if (!isNaN(valueClickPage)) {
+		numberPage = parseInt($(this).text());
 		utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
 		$('html, body').animate({
 			scrollTop: targetToGo[0].offsetHeight - 60
@@ -31,22 +33,38 @@ linkPagination.on('click', function (ev) {
 
 nextPage.on('click', function (ev) {
 	ev.preventDefault();
-	console.log("entro");
-	$(this).attr('class','');
-	numberPage++;
-	utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
-	$('html, body').animate({
-		scrollTop: targetToGo[0].offsetHeight - 60
-	});
+	if (numberPage == pages) {
+		$(this).attr('class','disabled');
+		$('.pagination > li')[numberPage].className = 'active';
+		return;
+	}
+	else {
+		$(this).attr('class','');
+		utilitiesPagination.removeActive($('.pagination > li'));
+		numberPage++;
+		$('.pagination > li')[numberPage].className = 'active';
+		utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
+		$('html, body').animate({
+			scrollTop: targetToGo[0].offsetHeight - 60
+		});
+	}
 });
 
 previousPage.on('click', function (ev) {
 	ev.preventDefault();
-	$(this).attr('class','');
-	numberPage--;
-	utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
-	$('html, body').animate({
-		scrollTop: targetToGo[0].offsetHeight - 60
-	});
-	$(this).attr('class','disabled');
+	if (numberPage == 1) {
+		$(this).attr('class','disabled');
+		$('.pagination > li')[1].className = 'active';
+		return;
+	}
+	else {
+		$(this).attr('class','');
+		utilitiesPagination.removeActive($('.pagination > li'));
+		numberPage--;
+		$('.pagination > li')[numberPage].className = 'active';
+		utilitiesPagination.setPaginate(numberPage, step, numberItems, copyContentItems, arrayItemsPerPage);
+		$('html, body').animate({
+			scrollTop: targetToGo[0].offsetHeight - 60
+		});
+	}
 });
