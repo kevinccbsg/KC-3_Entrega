@@ -52,7 +52,7 @@ formComments.on('submit', function (ev) {
 		comment: textAreaText,
 		name: nameInput.value,
 		lastName: lasNameInput.value,
-		email: emailInput
+		email: emailInput.value
 	}
 	ajaxUtilities.save(formatedData, function (response) {
 		for (let i = 0, inputlength = inputs.length; i < inputlength; i++) {

@@ -26,13 +26,13 @@ module.exports = {
 									<section class="comment-card">
 										<header>
 											<div class="comment-header">
-												<h4 class="user-comment">escapeHtml(${nameUser}) escapeHtml(${lastNameUser})</h4>
-												<h6 class="email-comment">escapeHtml(${email})</h6>
+												<h4 class="user-comment">${escapeHtml(nameUser)} ${escapeHtml(lastNameUser)}</h4>
+												<h6 class="email-comment">${escapeHtml(email)}</h6>
 											</div>
 										</header>
 										<article>
 											<div class="comment-content">
-												<p>escapeHtml(${comment})</p>
+												<p>${escapeHtml(comment)}</p>
 											</div>
 										</article>
 									</section>

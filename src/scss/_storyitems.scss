@@ -129,7 +129,7 @@
 			@include justy-content-space-between;
 			@include align-items-center;
 			margin-top: 10px;
-			.action-item {
+			.action-item, .action-item-comments {
 				@include tablet {
 					.display-under-tablet {
 						display: inline-block;
@@ -145,7 +145,7 @@
 					@include desktop {
 						&:hover {
 							text-decoration: none;
-							[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction {
+							[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction-likes, .number-interaction-comments {
 								color: $accent-color;
 								text-decoration: none;
 							}
@@ -155,12 +155,12 @@
 					&:focus {
 						outline: none;
 						text-decoration: none;
-						[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction {
+						[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction-likes, .number-interaction-comments {
 							color: $accent-color;
 							text-decoration: none;
 						}
 					}
-					.number-interaction {
+					.number-interaction-likes, .number-interaction-comments {
 						vertical-align: super;
 						&:after {
 							content: "\00a0";

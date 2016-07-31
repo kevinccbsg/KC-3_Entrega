@@ -1,7 +1,7 @@
 'use strict'
 const $ = require('jquery');
 const storyLikeCommentInteraction = $('.action-item');
-let actionItem = $('.action-item').find('.number-interaction');
+let actionItem = $('.action-item').find('.number-interaction-likes');
 if (actionItem.length) {
 	for (let i = 0, actionItemLength = actionItem.length; i < actionItemLength; i++) {
 		if (typeof(Storage) !== "undefined") {
@@ -21,8 +21,8 @@ if (actionItem.length) {
 storyLikeCommentInteraction.on('click', function (ev) {
 	ev.preventDefault();
 	console.log('entro');
-	console.log($(this).find('.number-interaction'));
-	let spanNumberInteraction = $(this).find('.number-interaction');
+	console.log($(this).find('.number-interaction-likes'));
+	let spanNumberInteraction = $(this).find('.number-interaction-likes');
 	let identifierWebStorage = spanNumberInteraction.attr('id');
 	if (typeof(Storage) !== "undefined") {
 		// Code for localStorage/sessionStorage.
