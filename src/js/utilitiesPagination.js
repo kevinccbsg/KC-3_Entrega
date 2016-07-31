@@ -1,5 +1,5 @@
 'use strict'
-module.exports.createArrayToPaginate = function (pages, itemsPerpage, contentItems) {
+module.exports.createArrayToPaginate = (pages, itemsPerpage, contentItems) => {
 	let copyContentItems = contentItems;
 	let arrayItemsPerPage = [];
 	let tmpArray = [];
@@ -12,12 +12,12 @@ module.exports.createArrayToPaginate = function (pages, itemsPerpage, contentIte
 	}
 	return arrayItemsPerPage;
 }
-module.exports.removeActive = function (selector) {
+module.exports.removeActive = (selector) => {
 	for (var i = 0; i < selector.length; i++) {
 		selector[i].className = '';
 	}
 }
-module.exports.setPaginate = function (numberPage, step, numberItems, copyContentItems, arrayItemsPerPage) {
+module.exports.setPaginate = (numberPage, step, numberItems, copyContentItems, arrayItemsPerPage) => {
 
 	for (var i = 0; i < numberItems; i++) {
 		copyContentItems[i].className = 'story-section';

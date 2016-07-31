@@ -2,7 +2,7 @@
 const $ = require('jquery');
 
 module.exports = {
-	save: function (comment, successCallback, errorCallback) {
+	save: (comment, successCallback, errorCallback) => {
 		let formData = new FormData();
 		formData.append('comment', comment.comment);
 		formData.append('name', comment.name);
@@ -19,7 +19,7 @@ module.exports = {
 			error: errorCallback
 		});
 	},
-	listComments: function (successCallback, errorCallback) {
+	listComments: (successCallback, errorCallback) => {
 		$.ajax({
 			url: '/api/comments/',
 			method: 'get',

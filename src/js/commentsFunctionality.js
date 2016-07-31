@@ -10,9 +10,7 @@ let emailInput = document.getElementById('inputEmail');
 let inputs = $('.form-group input, .form-group textarea');
 let errorBlock = document.querySelector('#error-message.block-content');
 let errorText = document.getElementById('error-text');
-let displayComments = require('./displayComments');
 
-displayComments.loadComments();
 
 formComments.on('submit', function (ev) {
 	ev.preventDefault();

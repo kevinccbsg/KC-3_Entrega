@@ -5,6 +5,7 @@ const gulp 		 	= require('gulp'),
 	  browserify 	= require('browserify'),
 	  tap 		 	= require('gulp-tap'),
 	  buffer 		= require('gulp-buffer'),
+	  babelify 	 	= require('babelify'),
 	  fileinclude  	= require('gulp-file-include'),
 	  uglify 		= require('gulp-uglify'),
 	  sourcemaps 	= require('gulp-sourcemaps'),
@@ -59,7 +60,8 @@ gulp.task('browserify-js-files', function() {
 	var b = browserify({
 		entries: './src/js/app.js',
 		debug: true
-	});
+	})
+	.transform(babelify);
 
 	return b.bundle()
 	.pipe(source('./app.js'))
@@ -74,7 +76,7 @@ gulp.task('browserify-js-files', function() {
 gulp.task('browserify-js-static-files', function() {
 	return gulp.src(jsPath)
 	.pipe(tap(function (file) {
-		file.contents = browserify(file.path, {debug: true}).bundle();
+		file.contents = browserify(file.path, {debug: true}).transform(babelify).bundle();
 	}))
 	.pipe(buffer())
 	.pipe(uglify())

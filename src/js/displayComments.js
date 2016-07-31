@@ -45,11 +45,12 @@ module.exports = {
 		}, function (err) {
 			if(err.status === 404) {
 				console.log('Bad Request: ', err);
+				stateComments.attr('class','states-coments no-comments').css('display','block');
 				stateComments.attr('class','states-coments no-comments');
 			}
 			if(err.statur === 500) {
 				console.log('Internal server Error: ', err);
-				stateComments.attr('class','states-coments no-comments');
+				stateComments.attr('class','states-coments no-comments').css('display','block');
 				$('no-comments-content').html('<h3>Sorry, An Internal Error Ocoured</h3><br><p>It will be fixed soon.</p>')
 			}
 		});
