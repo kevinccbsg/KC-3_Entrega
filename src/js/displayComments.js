@@ -1,7 +1,9 @@
 'use strict'
 const $ = require('jquery');
 const ajaxUtilities = require('./ajaxUtilities');
+const escapeHtml = require('escape-html');
 let stateComments = $('.states-coments');
+
 
 module.exports = {
 	loadComments: () => {
@@ -24,13 +26,13 @@ module.exports = {
 									<section class="comment-card">
 										<header>
 											<div class="comment-header">
-												<h4 class="user-comment">${nameUser} ${lastNameUser}</h4>
-												<h6 class="email-comment">${email}</h6>
+												<h4 class="user-comment">escapeHtml(${nameUser}) escapeHtml(${lastNameUser})</h4>
+												<h6 class="email-comment">escapeHtml(${email})</h6>
 											</div>
 										</header>
 										<article>
 											<div class="comment-content">
-												<p>${comment}</p>
+												<p>escapeHtml(${comment})</p>
 											</div>
 										</article>
 									</section>
