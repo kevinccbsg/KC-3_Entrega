@@ -10,7 +10,7 @@ let emailInput = document.getElementById('inputEmail');
 let inputs = $('.form-group input, .form-group textarea');
 let errorBlock = document.querySelector('#error-message.block-content');
 let errorText = document.getElementById('error-text');
-
+let displayComments = require('./displayComments');
 
 formComments.on('submit', function (ev) {
 	ev.preventDefault();
@@ -58,6 +58,7 @@ formComments.on('submit', function (ev) {
 		for (let i = 0, inputlength = inputs.length; i < inputlength; i++) {
 			inputs[0].value = '';
 		}
+		displayComments.loadComments();
 	}, function (err) {
 		console.log('No se guardo');
 	});

@@ -8,3 +8,4 @@ require('./navbarBehavior');
 require('./storyVideo');
 require('./likesWebStorege');
 require('./commentsFunctionality');
+require('./timerUtility');
