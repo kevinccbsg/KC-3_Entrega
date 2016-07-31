@@ -6,3 +6,4 @@ require('./pagination');
 require('./uiFunctionalities');
 require('./navbarBehavior');
 require('./storyVideo');
+require('./likesWebStorege');
