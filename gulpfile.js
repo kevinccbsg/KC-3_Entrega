@@ -105,7 +105,6 @@ gulp.task('develop', [
 		gulp.watch(sassPath, ['compile-sass']);
 		gulp.watch('./src/js/*.js', ['browserify-js-files']);
 		gulp.watch(assetsImg, ['minified-assets-images']);
-		gulp.watch(spritePath, ['sprite-generator', 'compile-sass']);
 		gulp.watch(developPath, ['include-files']).on('change', browserSync.reload);
 	});
 
