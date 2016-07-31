@@ -55,8 +55,8 @@ formComments.on('submit', function (ev) {
 		email: emailInput
 	}
 	ajaxUtilities.save(formatedData, function (response) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i][0].value = '';
+		for (let i = 0, inputlength = inputs.length; i < inputlength; i++) {
+			inputs[0].value = '';
 		}
 	}, function (err) {
 		console.log('No se guardo');
@@ -65,5 +65,5 @@ formComments.on('submit', function (ev) {
 });
 
 inputs.on('keydown', function (ev) {
-	$(this)[0].style.borderColor = '#f5f5f5';
+	$(this)[0].style.borderColor = 'rgb(169,169,169)';
 });

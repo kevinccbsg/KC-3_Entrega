@@ -3,7 +3,7 @@ const $ = require('jquery');
 const storyLikeCommentInteraction = $('.action-item');
 let actionItem = $('.action-item').find('.number-interaction');
 if (actionItem.length) {
-	for (var i = 0; i < actionItem.length; i++) {
+	for (let i = 0, actionItemLength = actionItem.length; i < actionItemLength; i++) {
 		if (typeof(Storage) !== "undefined") {
 			if (localStorage.getItem(actionItem[i].id)) {
 				actionItem[i].innerHTML = localStorage.getItem(actionItem[i].id);
