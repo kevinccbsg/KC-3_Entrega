@@ -7,3 +7,5 @@ dist/images/*
 dist/css/*
 dist/video/*
 dist/fonts/*
+dist/db/
+dist/db/*
