@@ -7,3 +7,4 @@ require('./uiFunctionalities');
 require('./navbarBehavior');
 require('./storyVideo');
 require('./likesWebStorege');
+require('./commentsFunctionality');

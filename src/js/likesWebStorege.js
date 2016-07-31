@@ -2,20 +2,22 @@
 const $ = require('jquery');
 const storyLikeCommentInteraction = $('.action-item');
 let actionItem = $('.action-item').find('.number-interaction');
-
-for (var i = 0; i < actionItem.length; i++) {
-	if (typeof(Storage) !== "undefined") {
-		if (localStorage.getItem(actionItem[i].id)) {
-			actionItem[i].innerHTML = localStorage.getItem(actionItem[i].id);
+if (actionItem.length) {
+	for (var i = 0; i < actionItem.length; i++) {
+		if (typeof(Storage) !== "undefined") {
+			if (localStorage.getItem(actionItem[i].id)) {
+				actionItem[i].innerHTML = localStorage.getItem(actionItem[i].id);
+			}
+			else {
+				actionItem[i].innerHTML = 0;
+			}
 		}
 		else {
-			actionItem[i].innerHTML = 0;
+			console.log('Your browser Not support web storage');
 		}
-	}
-	else {
-		console.log('Your browser Not support web storage');
-	}
+	}	
 }
+
 storyLikeCommentInteraction.on('click', function (ev) {
 	ev.preventDefault();
 	console.log('entro');
