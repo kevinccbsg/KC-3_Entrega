@@ -12,14 +12,83 @@
 				</div>
 			</div>
 		</div>
-		<div class="ui-element website-full-view">
+		<div id="content-web" class="ui-element website-full-view">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
 						<div class="row">
-							@@include('./includes/resume_story.html')
-							@@include('./includes/resume_story.html')
-							@@include('./includes/resume_story.html')
+							@@include('./includes/resume_story.html', {
+								"idstory": "1",
+								"imgavatar" : "ben.png",
+								"username":"ben",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "2",
+								"imgavatar" : "mike.png",
+								"username":"mister_stories",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "3",
+								"imgavatar" : "adam.jpg",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story_video.html',{
+								"idstory": "4",
+								"imgavatar" : "perry.png",
+								"username":"perry",
+								"imagevideo":"video_img.png",
+								"videostory": "gtd_live.mp4",
+								"titlestory":"Kevin band play at Moondance"
+							})
+							@@include('./includes/resume_story_video.html',{
+								"idstory": "5",
+								"imgavatar" : "mike.png",
+								"username":"gizmodo_blog",
+								"imagevideo":"video_img.png",
+								"videostory": "gtd_live.mp4",
+								"titlestory":"Go the distance Live"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "6",
+								"imgavatar" : "avatar_default.png",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "7",
+								"imgavatar" : "avatar_default.png",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "8",
+								"imgavatar" : "avatar_default.png",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "9",
+								"imgavatar" : "perry.png",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
+							@@include('./includes/resume_story.html', {
+								"idstory": "10",
+								"imgavatar" : "ben.png",
+								"username":"gizmodo_blog",
+								"imagestory":"story_7.jpg",
+								"titlestory":"Node js 6 and his new features"
+							})
 						</div>
 					</div>
 					<div class="col-md-4 display-over-tablet">

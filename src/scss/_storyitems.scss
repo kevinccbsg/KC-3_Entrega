@@ -1,6 +1,11 @@
 .story-section {
 	border-top: 1px solid transparentize($dark-primary-color, 0.5);
 	padding: 20px 10px;
+	display: none;
+	&.show {
+		display: block;
+		@include animation('fade-in .2s forwards');
+	}
 	&:last-child {
 		/*border-bottom: 1px solid transparentize($dark-primary-color, 0.5);*/
 	}
@@ -70,10 +75,21 @@
 		}
 	}
 	.fully-story-img {
-		overflow-y: hidden;
 		img {
 			width: 100%;
 			max-width: 100%;
+		}
+	}
+	.fully-story-img-video {
+		position: relative;
+		img, video{
+			width: 100%;
+			max-width: 100%;
+		}
+		img {
+			z-index: 2;
+			position: absolute;
+			height: 100%;
 		}
 	}
 	.story-content {
@@ -113,7 +129,7 @@
 			@include justy-content-space-between;
 			@include align-items-center;
 			margin-top: 10px;
-			.action-item {
+			.action-item, .action-item-comments {
 				@include tablet {
 					.display-under-tablet {
 						display: inline-block;
@@ -128,19 +144,23 @@
 					}
 					@include desktop {
 						&:hover {
-							[class*="fa"], [class*="material-icons"], .display-under-tablet {
+							text-decoration: none;
+							[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction-likes, .number-interaction-comments {
 								color: $accent-color;
+								text-decoration: none;
 							}
 						}
 					}
 					&:active,
 					&:focus {
 						outline: none;
-						[class*="fa"], [class*="material-icons"], .display-under-tablet {
-							color: $accent-color;	
+						text-decoration: none;
+						[class*="fa"], [class*="material-icons"], .display-under-tablet, .number-interaction-likes, .number-interaction-comments {
+							color: $accent-color;
+							text-decoration: none;
 						}
 					}
-					.number-interaction {
+					.number-interaction-likes, .number-interaction-comments {
 						vertical-align: super;
 						&:after {
 							content: "\00a0";

@@ -8,10 +8,12 @@ body {
 		}
 		.search-bar, .search-bar > .navbar {
 			display: block;
+			@include animation('fade-in .2s forwards');
 		}
 		@include desktop {
 			.website-full-view, .navbar {
 				display: block;
+				@include animation('fade-in .2s forwards');
 			}
 			.search-bar, .search-bar > .navbar {
 				display: none;
@@ -21,6 +23,7 @@ body {
 	&.full-web {
 		.website-full-view, .navbar {
 			display: block;
+			@include animation('fade-in .2s forwards');
 		}
 		.search-bar, .search-bar > .navbar {
 			display: none;
@@ -28,6 +31,7 @@ body {
 		@include desktop {
 			.website-full-view, .navbar {
 				display: block;
+				@include animation('fade-in .2s forwards');
 			}
 			.search-bar, .search-bar > .navbar {
 				display: none;
@@ -39,12 +43,14 @@ body {
 		&.no-comments {
 			.no-comments-container {
 				display: block;
+				@include animation('fade-in .2s forwards');
 			}
 		}
 		
 		&.comments {
 			.comments-container {
 				display: block;
+				@include animation('fade-in .2s forwards');
 			}
 		}
 

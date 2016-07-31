@@ -1,8 +1,6 @@
 @import 'reset';
 @import 'lib/font-awesome';
 @import 'lib/material-icons';
-@import 'lib/sprite';
-@import 'icons';
 @import 'lib/bootstrap';
 @import 'variables';
 @import 'responsiveutilities';
@@ -64,6 +62,9 @@ h6 {
 .display-over-tablet {
 	display: none;
 	@include tablet-desktop {
+		display: block;
+	}
+	@include desktop {
 		display: block;
 	}
 }

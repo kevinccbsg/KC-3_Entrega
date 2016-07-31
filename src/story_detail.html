@@ -12,7 +12,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="ui-element website-full-view">
+		<div  id="content-web" class="ui-element website-full-view">
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
@@ -37,7 +37,7 @@
 				</div>
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
-						<div class="comments-title">
+						<div id="section-comments" class="comments-title">
 							<h2>Comments</h2>
 						</div>
 					</div>
@@ -49,7 +49,7 @@
 								<section class="comment-card">
 									<div class="no-comments-content">
 										<p>No comments</p>
-										<a href="">Be the first!</a>
+										<a href="#" id="link-to-comment">Be the first!</a>
 									</div>
 								</section>
 							</div>
@@ -75,23 +75,28 @@
 				<div class="row">
 					<div class="col-xs-12 col-md-8">
 						<div class="form-container">
-							<form novalidate>
+							<form id="form-coments" novalidate>
 								<div class="form-group">
 									<label for="commentMessage">Comment</label>
-									<textarea id="commentMessage" cols="30" rows="5" placeholder="Write your comment"></textarea>
+									<textarea id="commentMessage" cols="30" rows="5" placeholder="Write your comment" required></textarea>
 								</div>
 								<div class="responsive-container">
 									<div class="form-group">
 										<label for="inputName">Name</label>
-										<input type="text" class="form-control" id="inputName" placeholder="Name">
+										<input type="text" class="form-control" id="inputName" placeholder="Name" required>
 									</div>
 									<div class="form-group">
 										<label for="inputLastName">Last Name</label>
-										<input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
+										<input type="text" class="form-control" id="inputLastName" placeholder="Last Name" required>
 									</div>
 									<div class="form-group">
 										<label for="inputEmail">Email</label>
-										<input type="mail" class="form-control" id="inputEmail" placeholder="Email">
+										<input type="email" class="form-control" id="inputEmail" placeholder="Email" pattern="^([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}$" required>
+									</div>
+								</div>
+								<div id="error-message" class="block-content">
+									<div class="text-error">
+										<p id="error-text">texto prueba</p>
 									</div>
 								</div>
 								<div class="container-button">
