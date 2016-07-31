@@ -13,10 +13,10 @@ const gulp 		 	= require('gulp'),
 	  autoprefixer  = require('autoprefixer'),
 	  cssnano 	 	= require('cssnano'),
 	  imagemin 	 	= require('gulp-imagemin'),
-	  spritesmith	= require('gulp.spritesmith'),
 	  merge 		= require('merge-stream'),
 	  gutil 		= require('gulp-util'),
-	  source 		= require('vinyl-source-stream');
+	  source 		= require('vinyl-source-stream'),
+	  htmlmin 		= require('gulp-htmlmin');;
 
 
 let developPath = './src/*.html';
@@ -25,9 +25,7 @@ let fontPath = './src/fonts/**/*.{ttf,woff,woff2,eof,svg}'
 let videoPath = './src/videos/**/*.mp4';
 let sassPath = './src/scss/*.scss';
 let jsPath = './src/js/app.js';
-let uploadsImg = ['./dist/uploads/*.png','./dist/uploads/*.jpg','./dist/uploads/*.jpeg','./dist/uploads/*.svg','./dist/uploads/*.gif'];
 let assetsImg = './src/images/*.{png,jpg,jpeg,gif,svg,JPEG}';
-let spritePath = './src/images/icons/**/*.png';
 
 gulp.task('include-files', function() {
 	return gulp.src(developPath)
@@ -35,6 +33,7 @@ gulp.task('include-files', function() {
 		prefix: '@@',
 		basepath: '@file'
 	}))
+	.pipe(htmlmin({collapseWhitespace: true}))
 	.pipe(gulp.dest('./dist/'))
 	.pipe(browserSync.stream());
 });
@@ -67,7 +66,7 @@ gulp.task('browserify-js-files', function() {
 	.pipe(source('./app.js'))
 	.pipe(buffer())
 		// Add transformation tasks to the pipeline here.
-		//.pipe(uglify())
+		.pipe(uglify())
 		.on('error', gutil.log)
 	.pipe(gulp.dest('./dist/js/'))
 	.pipe(browserSync.stream());
@@ -82,11 +81,6 @@ gulp.task('browserify-js-static-files', function() {
 	.pipe(uglify())
 	.pipe(gulp.dest('dist/js/'))
 });
-gulp.task('minified-uploaded-images', function () {
-	return gulp.src(uploadsImg)
-	.pipe(imagemin())
-	.pipe(gulp.dest('./dist/uploads/'))
-});
 gulp.task('minified-assets-images', function() {
 	return gulp.src(assetsImg)
 	.pipe(imagemin({
@@ -94,21 +88,6 @@ gulp.task('minified-assets-images', function() {
 	}))
 	.pipe(gulp.dest('./dist/images/'))
 })
-gulp.task('sprite-generator', function () {
-	let spriteData = gulp.src(spritePath)
-	.pipe(spritesmith({
-		imgName: 'sprite.png',
-		cssName: '_sprite.scss'
-	}));
-	let imgStream = spriteData.img.pipe(buffer())
-	.pipe(imagemin())
-	.pipe(gulp.dest('./dist/images/icons'));
-
-	let scssStream = spriteData.css
-	.pipe(gulp.dest('./src/scss/lib'));
-
-	return merge(imgStream, scssStream);
-});
 
 gulp.task('develop', [
 	'include-files',
@@ -116,9 +95,7 @@ gulp.task('develop', [
 	'copying-videos',
 	'compile-sass',
 	'browserify-js-files',
-	'sprite-generator',
-	'minified-assets-images',
-	'minified-uploaded-images'], function () {
+	'minified-assets-images'], function () {
 		// we work with sparest server
 		browserSync.init({
 			proxy: '127.0.0.1:8000'
@@ -138,8 +115,6 @@ gulp.task('production-statics', [
 	'copying-videos',
 	'compile-sass',
 	'browserify-js-static-files',
-	'sprite-generator',
-	'minified-assets-images',
-	'minified-uploaded-images'], function () {
+	'minified-assets-images'], function () {
 		console.log('Statics done');
 	});
