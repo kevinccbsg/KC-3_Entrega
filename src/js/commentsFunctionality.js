@@ -1,6 +1,7 @@
 'use strict'
 const $ = require('jquery');
-var validationUtilities = require('./commetsValidationUtilities');
+const ajaxUtilities = require('./ajaxUtilities');
+const validationUtilities = require('./commetsValidationUtilities');
 const formComments = $('#form-coments');
 let textareaInput = document.getElementById('commentMessage');
 let nameInput = document.getElementById('inputName');
@@ -9,6 +10,9 @@ let emailInput = document.getElementById('inputEmail');
 let inputs = $('.form-group input, .form-group textarea');
 let errorBlock = document.querySelector('#error-message.block-content');
 let errorText = document.getElementById('error-text');
+let displayComments = require('./displayComments');
+
+displayComments.loadComments();
 
 formComments.on('submit', function (ev) {
 	ev.preventDefault();
@@ -46,6 +50,20 @@ formComments.on('submit', function (ev) {
 			return false;
 		}
 	}
+	let formatedData = {
+		comment: textAreaText,
+		name: nameInput.value,
+		lastName: lasNameInput.value,
+		email: emailInput
+	}
+	ajaxUtilities.save(formatedData, function (response) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i][0].value = '';
+		}
+	}, function (err) {
+		console.log('No se guardo');
+	});
+
 });
 
 inputs.on('keydown', function (ev) {
