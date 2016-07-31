@@ -27,3 +27,15 @@ $('#searchButtonDesktop').on('click', function (ev) {
 		$('#navbarSearchInput').toggleClass('active');
 	}
 });
+
+$('#link-to-comment').on('click', function (ev) {
+	ev.preventDefault();
+	$('#commentMessage')[0].focus();
+});
+
+$('#goUpPage').on('click', function (ev) {
+	ev.preventDefault();
+	$('html, body').animate({
+		scrollTop: 0
+	});
+});

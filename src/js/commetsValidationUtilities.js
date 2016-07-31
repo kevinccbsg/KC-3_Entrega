@@ -4,7 +4,7 @@ function _closeError (blockError) {
 	blockError.style.display = 'none';
 }
 
-module.exports.helperValidity = function (input, event) {
+module.exports.helperValidity = (input, event) => {
 	if (input != null) {
 		input.focus();
 		input.style.borderColor = "red";
@@ -15,7 +15,7 @@ module.exports.helperValidity = function (input, event) {
 	}
 }
 
-module.exports.errorSubmit = function (message, blockError, textError) {
+module.exports.errorSubmit = (message, blockError, textError) => {
 	blockError.style.display = 'block';
 	textError.innerHTML = message;
 	setTimeout(function() {
